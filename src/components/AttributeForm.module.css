@@ -1,0 +1,13 @@
+.formContainer {
+  background-color: blue;
+  display: flex;
+  width: 40%;
+  height: 95%;
+  border-radius: 0px 10px 10px 0px;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.formContainer::-webkit-scrollbar {
+  display: none;
+}
