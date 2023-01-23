@@ -1,1 +1,7 @@
-import styles from "./AttributeForms.module.css";
+import React from 'react'
+
+export default function AttributeForm() {
+  return (
+    <div>AttributeForm</div>
+  )
+}

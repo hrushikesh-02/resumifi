@@ -1,0 +1,12 @@
+/* .app{
+    margin: 0;
+    padding: 0;;
+} */
+.wrapper{
+    aspect-ratio: 1/1.414 ;
+    background-color: pink;
+    min-height: 95vh;
+}
+h2,h6,h5{
+    margin: 0;
+}
