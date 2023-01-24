@@ -1,4 +1,5 @@
 import React from "react";
+import Education from "./Education";
 import styles from "./OutputWindow.module.css";
 
 export default function OutputWindow({ data }) {
@@ -22,10 +23,7 @@ export default function OutputWindow({ data }) {
           </a></span>
       </div>
 
-      <div className={styles.main}>
-        
-
-      </div>
+     <Education  data={data}/>
 
       {/* <div className={styles.header}>
         <h3>{data.name}</h3>

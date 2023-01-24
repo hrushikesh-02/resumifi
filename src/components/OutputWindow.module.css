@@ -3,26 +3,33 @@
     padding: 0;;
 } */
 
-.wrapper{
-    aspect-ratio: 1/1.414 ;
-    background-color: pink;
-    min-height: 95vh;
-    display: flex;
-    justify-content: center;
+.wrapper {
+  aspect-ratio: 1/1.414;
+  background-color: pink;
+  min-height: 95vh;
+  display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+
 }
-.header{
-    width: 100%;  
+.header {
+  width: 100%;
 }
-.header>h2,h3{
-    margin: 0;
+.header > h2,
+h3 {
+  margin: 0;
 }
-.header>span{
-    font-size: 1rem;
-    margin-right: 10px ;
+.header > span {
+  font-size: 1rem;
+  margin-right: 10px;
 }
-.header>h3{
-    font-size: 1rem;
+.header > h3 {
+  font-size: 1rem;
 }
-.header>h2{
-    border-bottom: 1px solid black;
+.header > h2 {
+  border-bottom: 1px solid black;
+}
+a {
+  text-decoration: none;
+  color: rgb(21, 107, 139);
 }
