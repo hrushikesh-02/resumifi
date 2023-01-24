@@ -3,8 +3,9 @@
   width: 5%;
   /* background-color: red; */
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   align-self: flex-end;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-evenly;
 }
