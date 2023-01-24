@@ -19,7 +19,8 @@ function Attributeform() {
         return (
           <InputElement
             attributeName={property}
-            data={data[property]}
+            // data={data[property]}
+            data=""
             setData={setData}
           />
         );

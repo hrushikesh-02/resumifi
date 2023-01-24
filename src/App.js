@@ -3,7 +3,7 @@ import AttributeForm from "../src/components/AttributeForm";
 // import OutputWindow from "../src/components/OutputWindow";
 import { useState } from "react";
 import OutputWindow from "./components/OutputWindow";
-
+import Customizer from "./components/Customizer";
 function App() {
   const [data, setData] = useState({
     name: "Hrushikesh",
@@ -20,9 +20,10 @@ function App() {
     <>
       <div className="App">
         <AttributeForm />
-        <header className="App-header">
+        <header className="AppOutput">
           <OutputWindow data={data} />
         </header>
+        <Customizer />
       </div>
     </>
   );
