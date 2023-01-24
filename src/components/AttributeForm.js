@@ -23,6 +23,7 @@ function Attributeform(props) {
             data={props.data[property]}
             setData={props.setData}
           />
+          
         );
       })}
     </div>

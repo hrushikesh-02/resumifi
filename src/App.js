@@ -8,8 +8,11 @@ function App() {
   const [data, setData] = useState({
     name: "Hrushikesh",
     age: "20",
-    email: { name: "Email", value: "abc@gmai.com" },
-    education: [{ name: "abc", degree: "btech", result: "90%" }],
+    email: "abc@gmail.com",
+    education: [
+      { name: "name", description: "description", result: "90%" },
+      { name: "name", description: "description", result: "90%" },
+    ],
     skill: ["cpp", "java", "python"],
     socials: [
       { name: "github", link: "github.com" },
