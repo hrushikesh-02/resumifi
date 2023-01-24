@@ -6,15 +6,15 @@ import AddIcon from "@mui/icons-material/Add";
 function Customizer() {
   return (
     <div className={styles.buttonHolder}>
-      <Fab color="secondary" aria-label="add">
+      <Fab size="small" color="secondary" aria-label="add">
         <AddIcon />
       </Fab>
 
-      <Fab color="secondary" aria-label="add">
+      <Fab size="small" color="secondary" aria-label="add">
         <AddIcon />
       </Fab>
 
-      <Fab color="secondary" aria-label="add">
+      <Fab size="small" color="secondary" aria-label="add">
         <AddIcon />
       </Fab>
     </div>

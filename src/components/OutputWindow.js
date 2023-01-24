@@ -3,7 +3,7 @@ import styles from "./OutputWindow.module.css";
 
 export default function OutputWindow({ data }) {
   //   const ed = data.education;
-  console.log(data);
+  // console.log(data);
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
