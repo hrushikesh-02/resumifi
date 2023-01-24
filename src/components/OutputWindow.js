@@ -6,17 +6,43 @@ export default function OutputWindow({ data }) {
 
   return (
     <div className={styles.wrapper}>
-      <h2>{data.name}</h2>
-      <h6>
+      <div className={styles.header}>
+        <h2>{data.name}</h2>
         {data.socials.map((social) => {
           return (
-            <h6>
-              {social.name}
-              {social.link}
-            </h6>
+            <span key={social.link}> 
+            {/* have to update key */}
+              <a href={social.link}>{social.name}</a>
+            </span>
           );
         })}
-      </h6>
+        <span>
+        <a href={ "mailto:" + data.email.value}>
+          {data.email.name}
+          </a></span>
+      </div>
+
+      <div className={styles.main}>
+        
+
+      </div>
+
+      {/* <div className={styles.header}>
+        <h3>{data.name}</h3>
+       
+          {data.socials.map((social) => {
+            return (
+              <h6>
+                {social.name}
+                {social.link}
+              </h6>
+            );
+          })}
+       
+      </div>
+
+      <div className={styles.main}></div>
+
       <h5>{data.email}</h5>
       <h5>{data.age}</h5>
       <h5>
@@ -55,7 +81,7 @@ export default function OutputWindow({ data }) {
         {data.achievements.map((achv) => {
           return <div>{achv}</div>;
         })}
-      </h5>
+      </h5> */}
     </div>
   );
 }
