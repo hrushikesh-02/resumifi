@@ -15,7 +15,7 @@ function EducationInput(props) {
 
   const onClickHandler = () => {
     props.setData((prev) => {
-      console.log(tempObj);
+      // console.log(tempObj);
       prev[attributeName].push(tempObj);
       // console.log(prev);
       return { ...prev };
@@ -70,13 +70,19 @@ function EducationInput(props) {
           />
         </div>
         <div className={styles.endHolder}>
-          <Fab size="small" color="secondary" aria-label="add">
-            <AddIcon onClick={onClickHandler} />
+          <Fab size="medium" color="secondary" aria-label="add">
+            <AddIcon fontSize="medium" onClick={onClickHandler} />
           </Fab>
         </div>
-        {/* {console.log(props.data.education)} */}
         {props.data.education.map((ele, ind) => {
-          return <EducationDisplay key={ind} data={ele}></EducationDisplay>;
+          return (
+            <EducationDisplay
+              key={ind}
+              data={ele}
+              wholeData={props.data} // Alias data -> wholeData
+              setData={props.setData}
+            ></EducationDisplay>
+          );
         })}
       </div>
     </div>

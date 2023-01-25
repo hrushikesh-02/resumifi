@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./EducationDisplay.module.css";
 
+import DeleteIcon from "@mui/icons-material/Delete";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import Fab from "@mui/material/Fab";
 function EducationDisplay(props) {
   const [open, setOpen] = React.useState(false);
 
@@ -16,18 +18,17 @@ function EducationDisplay(props) {
 
   return (
     <div key={props.ind} className={styles.mainContainer}>
-      {/* <div>{props.data.name}</div>
-      <div>{props.data.description}</div>
-      <div>{props.data.result}</div> */}
-
       <List
-        sx={{ width: "100%", bgcolor: "background.paper" }}
+        sx={{ width: "90%", bgcolor: "background.paper" }}
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
-        <ListItemButton onClick={handleClick} sx={{ width: "100%" }}>
-          <ListItemText primary={props.data.name} />
+        <ListItemButton
+          onClick={handleClick}
+          sx={{ width: "100%", padding: "0%" }}
+        >
           {open ? <ExpandLess /> : <ExpandMore />}
+          <ListItemText primary={props.data.name} />
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
@@ -43,6 +44,32 @@ function EducationDisplay(props) {
           </List>
         </Collapse>
       </List>
+      <Fab
+        sx={{ alignSelf: "flex-end" }}
+        size="small"
+        color="error"
+        aria-label="add"
+      >
+        <DeleteIcon
+          size="small"
+          onClick={() => {
+            props.setData((oldValues) => {
+              return {
+                ...oldValues,
+                education: props.wholeData.education.filter(
+                  (element) => element.name !== props.data.name
+                ),
+              };
+            });
+
+            // console.log(
+            //   props.wholeData.education.filter(
+            //     (element) => element.name !== props.data.name
+            //   )
+            // );
+          }}
+        />
+      </Fab>
     </div>
   );
 }
