@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid rgb(239, 239, 239);
+  margin-bottom: 1rem;
 }
 
 .attributeName {

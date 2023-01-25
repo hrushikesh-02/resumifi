@@ -1,6 +1,7 @@
 import styles from "./AttributeForm.module.css";
 import EducationInput from "./EducationInput";
 import InputElement from "./InputElement";
+import ProjectInput from "./ProjectInput";
 import SkillInput from "./SkillInput";
 // import React, { useState } from "react";
 
@@ -52,8 +53,14 @@ function Attributeform(props) {
         setData={props.setData}
       />
       <SkillInput
-        key={"education"}
-        attributeName={"education"}
+        key={"skill"}
+        attributeName={"skill"}
+        data={props.data}
+        setData={props.setData}
+      />
+      <ProjectInput
+        key={"project"}
+        attributeName={"projects"}
         data={props.data}
         setData={props.setData}
       />

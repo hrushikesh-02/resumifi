@@ -10,15 +10,15 @@ function App() {
     age: "20",
     email: "abc@gmail.com",
     education: [
-      { name: "SRM", description: "University", result: "9.5CGPA" },
-      { name: "VIT", description: "University[Masters]", result: "9CGPA" },
+      { name: "SRM", description: "University", score: "9.5CGPA" },
+      { name: "VIT", description: "University[Masters]", score: "9CGPA" },
     ],
     skill: ["cpp", "java", "python"],
     socials: [
       { name: "github", link: "github.com" },
       { name: "codechef", link: "codechef.com" },
     ],
-    projects: [{ name: "github", link: "github.com", description: "nil" }],
+    projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
     achievements: ["4* on codechef", "leetcoder"],
   });
   return (
