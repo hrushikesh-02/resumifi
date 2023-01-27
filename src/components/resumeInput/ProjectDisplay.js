@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./EducationDisplay.module.css";
+import styles from "./ProjectDisplay.module.css";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import List from "@mui/material/List";
@@ -9,7 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Fab from "@mui/material/Fab";
-function EducationDisplay(props) {
+function ProjectDisplay(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -25,10 +25,13 @@ function EducationDisplay(props) {
       >
         <ListItemButton
           onClick={handleClick}
-          sx={{ width: "100%", padding: "0%" }}
+          sx={{ width: "98%", borderRadius: "5px" }}
         >
           {open ? <ExpandLess /> : <ExpandMore />}
-          <ListItemText primary={props.data.name} />
+          <ListItemText
+            sx={{ height: "100%", padding: "0" }}
+            primary={props.data.name}
+          />
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
@@ -36,27 +39,22 @@ function EducationDisplay(props) {
               Name: {props.data.name}
             </div>
             <div className={styles.educationDisplayData}>
-              {props.data.description}
+              Description: {props.data.description}
             </div>
             <div className={styles.educationDisplayData}>
-              {props.data.score}
+              Link: {props.data.link}
             </div>
           </List>
         </Collapse>
       </List>
-      <Fab
-        sx={{ alignSelf: "flex-end" }}
-        size="small"
-        color="#ebebeb"
-        aria-label="add"
-      >
+      <Fab size="small" color="#ebebeb" aria-label="add">
         <DeleteIcon
-          size="large"
+          size="small"
           onClick={() => {
             props.setData((oldValues) => {
               return {
                 ...oldValues,
-                education: props.wholeData.education.filter(
+                projects: props.wholeData.projects.filter(
                   (element) => element.name !== props.data.name
                 ),
               };
@@ -68,4 +66,4 @@ function EducationDisplay(props) {
   );
 }
 
-export default EducationDisplay;
+export default ProjectDisplay;

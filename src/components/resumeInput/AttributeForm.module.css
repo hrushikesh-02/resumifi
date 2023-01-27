@@ -7,8 +7,21 @@
   overflow-y: scroll;
   border-right: 1px solid rgb(239, 239, 239);
   flex-direction: column;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 5px 20px 1px;
+  /* can remove shadow in future */
 }
 
 .formContainer::-webkit-scrollbar {
   display: none;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-bottom: 5px double rgb(239, 239, 239);
+  margin-bottom: 1rem;
 }

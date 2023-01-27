@@ -8,11 +8,15 @@ function SkillInput(props) {
   const [tempObj, setTempObj] = useState("");
 
   const onClickHandler = () => {
-    props.setData((prev) => {
-      prev["skill"].push(tempObj);
-      setTempObj("");
-      return { ...prev };
-    });
+    if (!tempObj) {
+      alert("not empty");
+    } else {
+      props.setData((prev) => {
+        prev["skill"].push(tempObj);
+        setTempObj("");
+        return { ...prev };
+      });
+    }
   };
 
   return (

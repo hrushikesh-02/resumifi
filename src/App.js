@@ -1,13 +1,12 @@
 import "./App.css";
-import AttributeForm from "../src/components/AttributeForm";
+import AttributeForm from "./components/resumeInput/AttributeForm";
 import { useState } from "react";
-import OutputWindow from "./components/OutputWindow";
-import Customizer from "./components/Customizer";
+import OutputWindow from "./components/resumeDisplay/OutputWindow";
+import Customizer from "./components/resumeCustomizer/Customizer";
 
 function App() {
   const [data, setData] = useState({
-    name: "Hrushikesh",
-    age: "20",
+    name: "Shreyash",
     email: "abc@gmail.com",
     education: [
       { name: "SRM", description: "University", score: "9.5CGPA" },
@@ -15,8 +14,8 @@ function App() {
     ],
     skill: ["cpp", "java", "python"],
     socials: [
-      { name: "github", link: "github.com" },
-      { name: "codechef", link: "codechef.com" },
+      { name: "github", link: "https://github.com/" },
+      { name: "codechef", link: "https://www.codechef.com/learn" },
     ],
     projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
     achievements: ["4* on codechef", "leetcoder"],
