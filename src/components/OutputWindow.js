@@ -23,6 +23,7 @@ export default function OutputWindow({ data }) {
       </div>
       
         <Education data={data}/>
+        
         <Projects data={data}/>
     </div>
   );

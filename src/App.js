@@ -10,7 +10,7 @@ function App() {
     age: "20",
     email: "abc@gmail.com",
     education: [
-      { name: "name", description: "description", result: "90%" },
+      { name: "SRM", description: "Worst College Campus", result: "80%" },
       { name: "name", description: "description", result: "90%" },
     ],
     skill: ["cpp", "java", "python"],
