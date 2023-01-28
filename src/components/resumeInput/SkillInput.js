@@ -40,8 +40,13 @@ function SkillInput(props) {
         <div className={styles.marginHolder}></div>
       </div>
       <div className={styles.endHolder}>
-        <Fab size="medium" color="secondary" aria-label="add">
-          <AddIcon fontSize="medium" onClick={onClickHandler} />
+        <Fab
+          size="medium"
+          color="secondary"
+          onClick={onClickHandler}
+          aria-label="add"
+        >
+          <AddIcon fontSize="medium" />
         </Fab>
       </div>
 

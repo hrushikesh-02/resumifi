@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
-import DropDisplay from "./EducationDisplay";
+import EducationDisplay from "./EducationDisplay";
 
 function EducationInput(props) {
   let attributeName = props.attributeName;
@@ -14,22 +14,26 @@ function EducationInput(props) {
   });
 
   const onClickHandler = () => {
-    props.setData((prev) => {
-      // console.log(tempObj);
-      prev[attributeName].push(tempObj);
-      // console.log(prev);
-      return { ...prev };
-    });
-    setTempObj(() => {
-      return {
-        name: "",
-        description: "",
-        score: "",
-      };
-    });
-    // console.log(props.data);
+    if (
+      tempObj.name.trim() === "" ||
+      tempObj.description.trim() === "" ||
+      tempObj.score.trim() === ""
+    ) {
+      alert("Please fill all the details to add");
+    } else {
+      props.setData((prev) => {
+        prev[attributeName].push(tempObj);
+        return { ...prev };
+      });
+      setTempObj(() => {
+        return {
+          name: "",
+          description: "",
+          score: "",
+        };
+      });
+    }
   };
-  // console.log(props.data);
 
   return (
     <div className={styles.inputElement}>
@@ -87,12 +91,12 @@ function EducationInput(props) {
         </div>
         {props.data.education.map((ele, ind) => {
           return (
-            <DropDisplay
+            <EducationDisplay
               key={ind}
               data={ele}
               wholeData={props.data} // Alias data -> wholeData
               setData={props.setData}
-            ></DropDisplay>
+            ></EducationDisplay>
           );
         })}
       </div>

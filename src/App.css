@@ -18,11 +18,12 @@
 }
 
 .AppOutput {
-  background-color: #f5f0e0;
-  width: 55%;
+  background-color: rgb(204, 230, 201);
+  background-color: rgb(237, 230, 246);
+  width: 60%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);

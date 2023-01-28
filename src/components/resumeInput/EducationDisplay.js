@@ -52,20 +52,18 @@ function EducationDisplay(props) {
         color="#ebebeb"
         aria-label="add"
         className="hidden group-hover:block bg-red-900"
+        onClick={() => {
+          props.setData((oldValues) => {
+            return {
+              ...oldValues,
+              education: props.wholeData.education.filter(
+                (element) => element.name !== props.data.name
+              ),
+            };
+          });
+        }}
       >
-        <DeleteIcon
-          size="large"
-          onClick={() => {
-            props.setData((oldValues) => {
-              return {
-                ...oldValues,
-                education: props.wholeData.education.filter(
-                  (element) => element.name !== props.data.name
-                ),
-              };
-            });
-          }}
-        />
+        <DeleteIcon size="large" />
       </Fab>
     </div>
   );
