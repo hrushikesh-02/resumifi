@@ -4,12 +4,14 @@ import styles from "./Education.module.css";
 
 export default function Education({ data }) {
   return (
-    <div className="EduComponent">
+    <div className={styles.EduComponent}>
+       {/* <div> Education : </div>;    */}
+       Education:
       {data.education.map((edu) => {
         return (
-          <div className={styles.EducationField}>
+          <div className={styles.EducationField} key={edu.name}>
             <h2>{edu.name}</h2>
-            <span> Aggregate: {edu.result}</span>
+            <span>{edu.score}</span>
             <span>{edu.description}</span>
           </div>
         );

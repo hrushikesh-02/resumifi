@@ -1,35 +1,33 @@
-/* .app{
-    margin: 0;
-    padding: 0;;
-} */
+.header>h2{
+  font-size: 1.75rem;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-weight: 400;
+  margin: 0;
+}
 
 .wrapper {
   aspect-ratio: 1/1.414;
-  background-color: pink;
+  background-color: rgb(249, 203, 97);
   min-height: 95vh;
   display: flex;
-    /* align-items: center; */
     flex-direction: column;
+    overflow-x: hidden;
+
 
 }
 .header {
   width: 100%;
+  border-bottom: 1px solid black ;
 }
-.header > h2,
-h3 {
-  margin: 0;
-}
-.header > span {
-  font-size: 1rem;
-  margin-right: 10px;
-}
-.header > h3 {
-  font-size: 1rem;
-}
-.header > h2 {
-  border-bottom: 1px solid black;
-}
+
 a {
   text-decoration: none;
   color: rgb(21, 107, 139);
+}
+
+.sociallinks{
+ display: flex;
+ justify-content: space-evenly;
+  width: 100%;
+  font-size: 1rem;
 }

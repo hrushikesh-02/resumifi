@@ -1,0 +1,46 @@
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 2px solid rgb(239, 239, 239);
+  margin-bottom: 1rem;
+}
+
+.header {
+  width: 92%;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: flex-start;
+  margin-block: 1rem;
+}
+
+.skillInput {
+  width: 100%;
+}
+
+.marginHolder {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.endHolder {
+  width: 92%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.chipContainer {
+  width: 92%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chipMarginHolder {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}

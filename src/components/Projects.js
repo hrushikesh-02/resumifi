@@ -1,19 +1,20 @@
-import React from 'react'
+import React from "react";
 
 import styles from "./Project.module.css";
-export default function Projects({data}) {
+export default function Projects({ data }) {
   return (
     <div className={styles.ProjectComponent}>
-        {data.projects.map((project) => {
+      {/* <u> Projects : </u> */}
+      Projects:
+      {data.projects.map((project) => {
         return (
-          <div className={styles.ProjectField}>
+          <div className={styles.ProjectField} key={project.name}>
             <h2>{project.name}</h2>
-            <span> {project.link}</span>
-            <span>{project.description}</span>
+            <span> link : {project.link}</span>
+            <span>Description : {project.description}</span>
           </div>
         );
       })}
-
     </div>
-  )
+  );
 }
