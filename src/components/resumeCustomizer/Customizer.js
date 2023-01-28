@@ -4,9 +4,9 @@ import Fab from "@mui/material/Fab";
 import PreviewIcon from "@mui/icons-material/Preview";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 import Tooltip from "@mui/material/Tooltip";
-import { ChromePicker, CirclePicker, SliderPicker } from "react-color";
+import { ChromePicker } from "react-color";
 import TextFormatRoundedIcon from "@mui/icons-material/TextFormatRounded";
-function Customizer() {
+function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
 
@@ -19,7 +19,17 @@ function Customizer() {
           disableFocusListener
           disableTouchListener
         >
-          <Fab size="small" color="secondary" aria-label="add">
+          <Fab
+            size="small"
+            color="secondary"
+            aria-label="add"
+            onClick={() => {
+              props.setPreview((preview) => {
+                console.log(preview);
+                return !preview;
+              });
+            }}
+          >
             <PreviewIcon />
           </Fab>
         </Tooltip>
@@ -50,6 +60,9 @@ function Customizer() {
               color={color}
               onChange={(updatedColor) => {
                 setColor(updatedColor.hex);
+                props.setData((prev) => {
+                  return { ...prev, color: color };
+                });
               }}
             />
           </div>

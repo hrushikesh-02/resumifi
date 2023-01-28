@@ -6,7 +6,7 @@ export default function OutputWindow({ data }) {
   // console.log(data);
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
+      <div className={styles.header} style={{ color: `${data.color}` }}>
         <h2>{data.name}</h2>
         {data.socials.map((social) => {
           return (
