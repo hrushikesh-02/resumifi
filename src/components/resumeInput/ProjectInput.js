@@ -1,57 +1,45 @@
-import styles from "./EducationInput.module.css";
+import styles from "./ProjectInput.module.css";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
-import DropDisplay from "./EducationDisplay";
+import ProjectDisplay from "./ProjectDisplay";
 
-function EducationInput(props) {
+function ProjectInput(props) {
   let attributeName = props.attributeName;
   const [tempObj, setTempObj] = useState({
     name: "",
     description: "",
-    score: "",
+    link: "",
   });
 
   const onClickHandler = () => {
     props.setData((prev) => {
-      // console.log(tempObj);
       prev[attributeName].push(tempObj);
-      // console.log(prev);
+      setTempObj(() => {
+        return { name: "", description: "", link: "" };
+      });
       return { ...prev };
     });
-    setTempObj(() => {
-      return {
-        name: "",
-        description: "",
-        score: "",
-      };
-    });
-    // console.log(props.data);
   };
-  // console.log(props.data);
 
   return (
     <div className={styles.inputElement}>
-      <div className={styles.attributeName}>{props.attributeName}</div>
+      <div className={styles.attributeName}>
+        <b>{props.attributeName}</b>
+      </div>
       <div className={styles.attributeInput}>
         <div className={styles.marginHolder}>
           <TextField
             id="outlined-basic"
-            label="Education"
+            label="Project-Name"
             variant="outlined"
             type={props.attributeNumber}
-            value={tempObj.name}
-            // onChange={(e) => {
-            //   props.setData((prev) => {
-            //     prev[attributeName] = e.target.value;
-            //     return { ...prev };
-            //   });
-            // }}
             onChange={(e) => {
               setTempObj({ ...tempObj, name: e.target.value });
             }}
             sx={{ width: "92%" }}
+            value={tempObj.name}
           />
         </div>
         <div className={styles.marginHolder}>
@@ -69,13 +57,13 @@ function EducationInput(props) {
         <div className={styles.marginHolder}>
           <TextField
             id="outlined-basic"
-            label="Score"
+            label="Link"
             variant="outlined"
             onChange={(e) => {
-              setTempObj({ ...tempObj, score: e.target.value });
+              setTempObj({ ...tempObj, link: e.target.value });
             }}
+            value={tempObj.link}
             sx={{ width: "92%" }}
-            value={tempObj.score}
           />
         </div>
         <div className={styles.endHolder} onClick={onClickHandler}>
@@ -83,14 +71,14 @@ function EducationInput(props) {
             <AddIcon fontSize="medium" />
           </Fab>
         </div>
-        {props.data.education.map((ele, ind) => {
+        {props.data.projects.map((ele, ind) => {
           return (
-            <DropDisplay
+            <ProjectDisplay
               key={ind}
               data={ele}
               wholeData={props.data} // Alias data -> wholeData
               setData={props.setData}
-            ></DropDisplay>
+            ></ProjectDisplay>
           );
         })}
       </div>
@@ -98,4 +86,4 @@ function EducationInput(props) {
   );
 }
 
-export default EducationInput;
+export default ProjectInput;
