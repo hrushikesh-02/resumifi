@@ -47,20 +47,22 @@ function ProjectDisplay(props) {
           </List>
         </Collapse>
       </List>
-      <Fab size="small" color="#ebebeb" aria-label="add">
-        <DeleteIcon
-          size="small"
-          onClick={() => {
-            props.setData((oldValues) => {
-              return {
-                ...oldValues,
-                projects: props.wholeData.projects.filter(
-                  (element) => element.name !== props.data.name
-                ),
-              };
-            });
-          }}
-        />
+      <Fab
+        size="small"
+        color="#ebebeb"
+        aria-label="add"
+        onClick={() => {
+          props.setData((oldValues) => {
+            return {
+              ...oldValues,
+              projects: props.wholeData.projects.filter(
+                (element) => element.name !== props.data.name
+              ),
+            };
+          });
+        }}
+      >
+        <DeleteIcon size="small" />
       </Fab>
     </div>
   );

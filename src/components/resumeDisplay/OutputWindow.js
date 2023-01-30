@@ -39,8 +39,8 @@ export default function OutputWindow({ data }) {
   
 
   return (
-    <div className={styles.wrapper} >
-      <div className={styles.header}>
+    <div className={styles.wrapper}>
+      <div className={styles.header} style={{ color: `${data.color}` }}>
         <h2>{data.name}</h2>
         <div className={styles.sociallinks}>
           {data.socials.map((social) => {

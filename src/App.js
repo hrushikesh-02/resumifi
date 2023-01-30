@@ -21,15 +21,28 @@ function App() {
       { name: "resumifi", link: "github.com", description: "nil" },
     ],
     achievements: ["4* on codechef", "leetcoder"],
+    color: "#000000",
   });
+
+  const [preview, setPreview] = useState(false);
+
   return (
     <>
       <div className="App">
-        <AttributeForm data={data} setData={setData} />
-        <header className="AppOutput">
+        {console.log(preview)}
+        {preview && <AttributeForm data={data} setData={setData} />}
+        <header
+          className="AppOutput"
+          style={{ width: preview ? "60%" : "95%" }}
+        >
           <OutputWindow data={data} setData={setData} />
         </header>
-        <Customizer />
+        <Customizer
+          data={data}
+          setData={setData}
+          preview={preview}
+          setPreview={setPreview}
+        />
       </div>
     </>
   );
