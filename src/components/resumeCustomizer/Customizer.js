@@ -123,16 +123,13 @@ function Customizer(props) {
             color="secondary"
             aria-label="add"
             onClick={async () => {
-              // const pdf = new jsPDF("portrait", "pt", "a4");
-              // const data = await document.querySelector("#pdf");
-              // pdf.html(data).then(() => {
-              //   pdf.save("resumePrinted.pdf");
-              // });
               html2canvas(document.querySelector("#pdf")).then((canvas) => {
-                // document.body.appendChild(canvas);
+                document.body.appendChild(canvas);
                 console.log(canvas);
-                const pdf = new jsPDF("portrait", "pt", "a4");
-                pdf.addImage(canvas, "JPEG", 0, 0);
+                const pdf = new jsPDF("p", "pt", "letter");
+                var width = pdf.internal.pageSize.getWidth(); //increases distortion
+                var height = pdf.internal.pageSize.getHeight(); //increases distortion
+                pdf.addImage(canvas, "JPEG", 0, 0, width, height);
                 pdf.save("test.pdf");
               });
             }}
