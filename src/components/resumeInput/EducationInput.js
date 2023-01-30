@@ -51,7 +51,7 @@ function EducationInput(props) {
             //   });
             // }}
             onChange={(e) => {
-              setTempObj({ ...tempObj, name: e.target.value });
+              setTempObj({ ...tempObj, name: e.target.value.toUpperCase() });
             }}
             sx={{ width: "92%" }}
           />

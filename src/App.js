@@ -7,17 +7,19 @@ import Customizer from "./components/resumeCustomizer/Customizer";
 function App() {
   const [data, setData] = useState({
     name: "Shreyash",
-    email: "abc@gmail.com",
+    email:"",
     education: [
       { name: "name", description: "description", score: "90%" },
-      { name: "name", description: "description", score: "90%" },
+      { name: "name", description: "description", score: "70%" },
     ],
     skill: ["cpp", "java", "python"],
     socials: [
       { name: "github", link: "https://github.com/" },
       { name: "codechef", link: "https://www.codechef.com/learn" },
     ],
-    projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
+    projects: [
+      { name: "resumifi", link: "github.com", description: "nil" },
+    ],
     achievements: ["4* on codechef", "leetcoder"],
   });
   return (

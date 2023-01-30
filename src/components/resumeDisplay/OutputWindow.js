@@ -1,13 +1,16 @@
 import React from "react";
-import Education from "./Education";
+import Education from "../Education.js";
 import styles from "./OutputWindow.module.css";
-import Projects from "./Projects";
+import Projects from "../Projects.js";
 import  { useState,useEffect } from 'react';
+import Skills from "./Skills.js";
 export default function OutputWindow({ data }) {
 
+  const [isProjectEmpty, setProjectEmpty] = useState(false);
   const [isEducationEmpty, setEducationEmpty] = useState(false);
+  const [Emailcheck,setEmail]=useState(false);
   useEffect(() => {
-    // console.log(data.education.length);
+      // console.log(data.email.length)
     if(data.education.length===0)
     {
       setEducationEmpty(true)
@@ -16,11 +19,27 @@ export default function OutputWindow({ data }) {
     {
       setEducationEmpty(false)
     }
-
+    if(data.projects.length===0)
+    {
+      setProjectEmpty(true)
+    }
+    else
+    {
+      setProjectEmpty(false)
+    }
+    if(data.email.length===0){
+      setEmail(true);
+    }
+    else{
+      setEmail(false);
+    }
   }, [data])
   
+  
+  
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} >
       <div className={styles.header}>
         <h2>{data.name}</h2>
         <div className={styles.sociallinks}>
@@ -32,13 +51,15 @@ export default function OutputWindow({ data }) {
               
             );
           })}
-          <a href={"mailto:" + data.email}>Email</a>
+         {  !Emailcheck  &&  <a href={"mailto:" + data.email}>Email</a> }
         </div>
       </div>
 
       {!isEducationEmpty && <Education data={data} />}
 
-      <Projects data={data} />
+      {!isProjectEmpty && <Projects data={data} />}
+
+      <Skills data={data}/>
     </div>
   );
 }
