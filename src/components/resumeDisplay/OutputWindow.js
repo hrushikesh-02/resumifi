@@ -8,7 +8,7 @@ export default function OutputWindow({ data }) {
   const [isProjectEmpty, setProjectEmpty] = useState(false);
   const [isEducationEmpty, setEducationEmpty] = useState(false);
   const [Emailcheck, setEmail] = useState(false);
-
+  const [isSkillEmpty, setSkillEmpty] = useState(false);
   useEffect(() => {
     if (data.education.length === 0) {
       setEducationEmpty(true);
@@ -25,11 +25,16 @@ export default function OutputWindow({ data }) {
     } else {
       setEmail(false);
     }
+    if (data.skill.length === 0) {
+      setSkillEmpty(true);
+    } else {
+      setSkillEmpty(false);
+    }
   }, [data]);
 
   return (
     <div className={styles.wrapper} id="pdf">
-      <div className={styles.header} style={{ color: `${data.color}` }}>
+      <div className={styles.header} style={{ color: `${data.color2}` }}>
         <h2>{data.name}</h2>
         <div className={styles.sociallinks}>
           {data.socials.map((social) => {
@@ -42,12 +47,10 @@ export default function OutputWindow({ data }) {
           {!Emailcheck && <a href={"mailto:" + data.email}>Email</a>}
         </div>
       </div>
-       <div className={styles.maincontent}> 
-      {!isEducationEmpty && <Education data={data} />}
-
-      {!isProjectEmpty && <Projects data={data} />}
-
-      <Skills data={data}/>
+      <div className={styles.maincontent}>
+        {!isEducationEmpty && <Education data={data} />}
+        {!isProjectEmpty && <Projects data={data} />}
+        {!isSkillEmpty && <Skills data={data} />}
       </div>
     </div>
   );

@@ -10,7 +10,8 @@ function App() {
     email: "",
     education: [
       { name: "name", description: "description", score: "90%" },
-      { name: "name", description: "description", score: "70%" },
+      { name: "name", description: "description", score: "90%" },
+
     ],
     skill: ["cpp", "java", "python"],
     socials: [
@@ -20,6 +21,7 @@ function App() {
     projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
     achievements: ["4* on codechef", "leetcoder"],
     color: "#000000",
+    color2: "#000000",
   });
 
   const [preview, setPreview] = useState(false);
