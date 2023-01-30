@@ -13,11 +13,15 @@ function SocialInput(props) {
   });
 
   const onClickHandler = () => {
-    props.setData((prev) => {
-      prev[attributeName].push(tempObj);
-      setTempObj({ name: "", link: "" });
-      return { ...prev };
-    });
+    if (tempObj.name.trim() === "" || tempObj.link.trim() === "") {
+      alert("Please fill all the details to add");
+    } else {
+      props.setData((prev) => {
+        prev[attributeName].push(tempObj);
+        setTempObj({ name: "", link: "" });
+        return { ...prev };
+      });
+    }
   };
   return (
     <div className={styles.inputElement}>

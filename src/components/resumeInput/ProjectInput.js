@@ -14,13 +14,21 @@ function ProjectInput(props) {
   });
 
   const onClickHandler = () => {
-    props.setData((prev) => {
-      prev[attributeName].push(tempObj);
-      setTempObj(() => {
-        return { name: "", description: "", link: "" };
+    if (
+      tempObj.name.trim() === "" ||
+      tempObj.description.trim() === "" ||
+      tempObj.link.trim() === ""
+    ) {
+      alert("Please fill all the details to add");
+    } else {
+      props.setData((prev) => {
+        prev[attributeName].push(tempObj);
+        setTempObj(() => {
+          return { name: "", description: "", link: "" };
+        });
+        return { ...prev };
       });
-      return { ...prev };
-    });
+    }
   };
 
   return (

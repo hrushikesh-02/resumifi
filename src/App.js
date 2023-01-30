@@ -7,7 +7,7 @@ import Customizer from "./components/resumeCustomizer/Customizer";
 function App() {
   const [data, setData] = useState({
     name: "Shreyash",
-    email:"",
+    email: "",
     education: [
       { name: "name", description: "description", score: "90%" },
       { name: "name", description: "description", score: "70%" },
@@ -17,9 +17,7 @@ function App() {
       { name: "github", link: "https://github.com/" },
       { name: "codechef", link: "https://www.codechef.com/learn" },
     ],
-    projects: [
-      { name: "resumifi", link: "github.com", description: "nil" },
-    ],
+    projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
     achievements: ["4* on codechef", "leetcoder"],
     color: "#000000",
   });
@@ -29,14 +27,14 @@ function App() {
   return (
     <>
       <div className="App">
-        {console.log(preview)}
-        {preview && <AttributeForm data={data} setData={setData} />}
-        <header
+        {!preview && <AttributeForm data={data} setData={setData} />}
+        <div
+          id="divToPrint"
           className="AppOutput"
-          style={{ width: preview ? "60%" : "95%" }}
+          style={{ width: !preview ? "60%" : "95%" }}
         >
-          <OutputWindow data={data} setData={setData} />
-        </header>
+          <OutputWindow id={"printablediv"} data={data} setData={setData} />
+        </div>
         <Customizer
           data={data}
           setData={setData}
