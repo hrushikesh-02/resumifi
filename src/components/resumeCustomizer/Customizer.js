@@ -83,12 +83,13 @@ function Customizer(props) {
             aria-label="add"
             onClick={async () => {
               html2canvas(document.querySelector("#pdf")).then((canvas) => {
-                console.log(canvas);
-                const pdf = new jsPDF("p", "pt", "letter");
+                const pdf = new jsPDF("p", "pt", "a4");
                 var width = pdf.internal.pageSize.getWidth(); //increases distortion
                 var height = pdf.internal.pageSize.getHeight(); //increases distortion
                 pdf.addImage(canvas, "JPEG", 0, 0, width, height);
-                pdf.save("test.pdf");
+                var pdfName = props.data.name + ".pdf";
+                console.log(pdfName);
+                pdf.save(pdfName);
               });
             }}
           >
