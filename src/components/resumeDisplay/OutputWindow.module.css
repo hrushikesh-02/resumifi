@@ -7,18 +7,21 @@
 
 .wrapper {
   aspect-ratio: 1/1.414;
-  
-  background-color: rgb(249, 203, 97);
+  background-color: rgb(243, 197, 91);
   min-height: 95vh;
   display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-
-
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
+    /* flex-wrap: wrap; */
+   
 }
 .header {
-  width: 100%;
+  padding-inline:10px ;
   border-bottom: 1px solid black ;
+  /* flex-grow: 1; */
+  height: 4rem;
+  text-align: center;
 }
 
 a {
@@ -31,4 +34,11 @@ a {
  justify-content: space-evenly;
   width: 100%;
   font-size: 1rem;
+}
+.maincontent{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100% - 5rem);
+  flex-grow: 1;
 }

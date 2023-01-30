@@ -54,12 +54,13 @@ export default function OutputWindow({ data }) {
          {  !Emailcheck  &&  <a href={"mailto:" + data.email}>Email</a> }
         </div>
       </div>
-
+       <div className={styles.maincontent}> 
       {!isEducationEmpty && <Education data={data} />}
 
       {!isProjectEmpty && <Projects data={data} />}
 
       <Skills data={data}/>
+      </div>
     </div>
   );
 }
