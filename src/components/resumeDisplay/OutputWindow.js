@@ -1,81 +1,65 @@
 import React from "react";
+import Education from "../Education.js";
 import styles from "./OutputWindow.module.css";
-
+import Projects from "../Projects.js";
+import  { useState,useEffect } from 'react';
+import Skills from "./Skills.js";
 export default function OutputWindow({ data }) {
-  //   const ed = data.education;
-  // console.log(data);
+
+  const [isProjectEmpty, setProjectEmpty] = useState(false);
+  const [isEducationEmpty, setEducationEmpty] = useState(false);
+  const [Emailcheck,setEmail]=useState(false);
+  useEffect(() => {
+      // console.log(data.email.length)
+    if(data.education.length===0)
+    {
+      setEducationEmpty(true)
+    }
+    else
+    {
+      setEducationEmpty(false)
+    }
+    if(data.projects.length===0)
+    {
+      setProjectEmpty(true)
+    }
+    else
+    {
+      setProjectEmpty(false)
+    }
+    if(data.email.length===0){
+      setEmail(true);
+    }
+    else{
+      setEmail(false);
+    }
+  }, [data])
+  
+  
+  
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header} style={{ color: `${data.color}` }}>
         <h2>{data.name}</h2>
-        {data.socials.map((social) => {
-          return (
-            <span key={social.link}>
-              {/* have to update key */}
-              <a href={social.link}>{social.name}</a>
-            </span>
-          );
-        })}
-        <span>
-          <a href={"mailto:" + data.email}>Email</a>
-        </span>
-      </div>
-
-      {/* <div className={styles.header}>
-        <h3>{data.name}</h3>
-       
+        <div className={styles.sociallinks}>
           {data.socials.map((social) => {
             return (
-              <h6>
+             <a href={social.link} key={social.link}>
                 {social.name}
-                {social.link}
-              </h6>
+              </a>
+              
             );
           })}
-       
+         {  !Emailcheck  &&  <a href={"mailto:" + data.email}>Email</a> }
+        </div>
       </div>
 
-      <div className={styles.main}></div>
+      {!isEducationEmpty && <Education data={data} />}
 
-      <h5>{data.email}</h5>
-      <h5>{data.age}</h5>
-      <h5>
-        {data.education.map((education) => (
-          <li>{education}</li>
-        ))}
-      </h5>
+      {!isProjectEmpty && <Projects data={data} />}
 
-      <h5>
-        {data.skill.map((skill) => (
-          <li>{skill}</li>
-        ))}
-      </h5>
-      <h5>
-        {data.socials.map((social) => {
-          return (
-            <div>
-              {social.name}
-              {social.link}
-            </div>
-          );
-        })}
-      </h5>
-      <h5>
-        {data.projects.map((project) => {
-          return (
-            <div>
-              {project.name}
-              {project.description}
-            </div>
-          );
-        })}
-      </h5>
-
-      <h5>
-        {data.achievements.map((achv) => {
-          return <div>{achv}</div>;
-        })}
-      </h5> */}
+      <Skills data={data}/>
     </div>
   );
 }

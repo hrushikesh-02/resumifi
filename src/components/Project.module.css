@@ -1,0 +1,28 @@
+.ProjectField>h2{
+    margin: 0;
+}
+.ProjectComponent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+.ProjectField{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: rgb(42, 45, 101);
+    border-bottom: 1px solid black;
+}
+.ProjectField>h2{
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.ProjectField>span{
+    font-size: 1rem;
+    font-weight: 400;
+}
