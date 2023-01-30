@@ -17,6 +17,14 @@
 .colorPicker {
   position: absolute;
   right: 4rem;
+  bottom: 9rem;
+  z-index: 100;
+}
+
+.colorPicker2 {
+  position: absolute;
+  right: 4rem;
   bottom: 5.5rem;
   z-index: 100;
 }
+

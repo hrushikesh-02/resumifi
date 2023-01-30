@@ -4,18 +4,22 @@
 .ProjectComponent{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    /* width: 100%; */
+    padding-inline: 10px;
     text-align: left;
-    margin-left: 10px;
     border-bottom: 1px solid black;
+    /* flex-grow: 1; */
+
 }
 .ProjectField{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    color: rgb(42, 45, 101);
-    border-bottom: 1px solid black;
+    padding-top: 0.5rem;
+
+    /* border-bottom: 1px solid black; */
 }
 .ProjectField>h2{
     font-size: 1rem;

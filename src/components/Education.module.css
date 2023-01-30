@@ -7,17 +7,16 @@
     flex-direction: column  ;
     border-bottom: 1px solid black;
     text-align: left;
-    width: 100%;
-    margin-bottom: 5px;
-    margin-left: 10px;
+    padding-inline: 10px;
+    /* margin-bottom: 5px; */
 }
 .EducationField{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    color: rgb(42, 45, 101);
-    border-bottom: 1px solid black;
+    padding-top: 0.5rem;
+    /* border-bottom: 1px solid black; */
 }
 .EducationField>h2{
    font-size: 1rem;

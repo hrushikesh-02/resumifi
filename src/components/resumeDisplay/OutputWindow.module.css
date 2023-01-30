@@ -1,34 +1,43 @@
-.header>h2{
+.header > h2 {
   font-size: 1.75rem;
-  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
   margin: 0;
 }
 
 .wrapper {
   aspect-ratio: 1/1.414;
-  
-  background-color: rgb(249, 203, 97);
+  background-color:white;
   min-height: 95vh;
   display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-
-
+  flex-direction: column;
+  /* overflow-x: hidden;
+    overflow-y: hidden; */
+  /* flex-wrap: wrap; */
 }
 .header {
-  width: 100%;
-  border-bottom: 1px solid black ;
+  padding-inline: 10px;
+  border-bottom: 1px solid black;
+  /* flex-grow: 1; */
+  height: 4rem;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
-  color: rgb(21, 107, 139);
+  
 }
 
-.sociallinks{
- display: flex;
- justify-content: space-evenly;
+.sociallinks {
+  display: flex;
+  justify-content: space-evenly;
   width: 100%;
   font-size: 1rem;
+}
+.maincontent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100% - 5rem);
+  flex-grow: 1;
 }

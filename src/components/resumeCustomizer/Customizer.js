@@ -13,6 +13,9 @@ function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
 
+  const [color2, setColor2] = useState("#000000");
+  const [showColorPicker2, setShowColorPicker2] = useState(false);
+
   return (
     <div className={styles.buttonHolder}>
       <div className={styles.customizerComponent}>
@@ -38,7 +41,7 @@ function Customizer(props) {
       </div>
       <div className={styles.customizerComponent}>
         <Tooltip
-          title="Color"
+          title="Color-1"
           placement="left"
           disableFocusListener
           disableTouchListener
@@ -49,6 +52,8 @@ function Customizer(props) {
             aria-label="add"
             onClick={() => {
               setShowColorPicker((showColorPicker) => !showColorPicker);
+              setShowColorPicker2(false);
+
             }}
           >
             <ColorLensIcon style={{ fill: color }} />
@@ -72,6 +77,42 @@ function Customizer(props) {
       </div>
       <div className={styles.customizerComponent}>
         <Tooltip
+          title="Color-2"
+          placement="left"
+          disableFocusListener
+          disableTouchListener
+        >
+          <Fab
+            size="small"
+            color="secondary"
+            aria-label="add"
+            onClick={() => {
+              setShowColorPicker(false);
+
+              setShowColorPicker2((showColorPicker2) => !showColorPicker2);
+            }}
+          >
+            <ColorLensIcon style={{ fill: color2 }} />
+          </Fab>
+        </Tooltip>
+        {showColorPicker2 && (
+          <div className={styles.colorPicker2}>
+            <ChromePicker
+              disableAlpha={true}
+              styles={{ border: "1px solid red", display: "flex " }}
+              color={color2}
+              onChange={(updatedColor) => {
+                setColor2(updatedColor.hex);
+                props.setData((prev) => {
+                  return { ...prev, color2: color2 };
+                });
+              }}
+            />
+          </div>
+        )}
+      </div>
+      <div className={styles.customizerComponent}>
+        <Tooltip
           title="Print"
           placement="left"
           disableFocusListener
@@ -83,7 +124,9 @@ function Customizer(props) {
             aria-label="add"
             onClick={async () => {
               html2canvas(document.querySelector("#pdf")).then((canvas) => {
-                const pdf = new jsPDF("p", "pt", "a4");
+                document.body.appendChild(canvas);
+                console.log(canvas);
+                const pdf = new jsPDF("p", "pt", "letter");
                 var width = pdf.internal.pageSize.getWidth(); //increases distortion
                 var height = pdf.internal.pageSize.getHeight(); //increases distortion
                 pdf.addImage(canvas, "JPEG", 0, 0, width, height);

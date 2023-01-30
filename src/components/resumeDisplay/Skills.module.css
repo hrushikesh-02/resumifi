@@ -1,19 +1,23 @@
 .skillcomponent{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    /* width: 100%; */
     text-align: left;
-    margin-left: 10px;
+    padding-inline: 10px;
+
     border-bottom: 1px solid black;
+    /* flex-grow:1; */
 }
 .skillfield{
     display: flex;
     flex-direction: row;
     font-size: 1rem;
     font-weight: 400;
+    padding-top: 0.5rem;
+
 }
 .skillfield>li{
     list-style: none;
     margin-right: 1.5rem;
-    color:rgb(42, 45, 101);
 }
