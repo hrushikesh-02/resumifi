@@ -7,6 +7,8 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import Tooltip from "@mui/material/Tooltip";
 import { ChromePicker } from "react-color";
 import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+
 function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -80,10 +82,17 @@ function Customizer(props) {
             color="secondary"
             aria-label="add"
             onClick={async () => {
-              const pdf = new jsPDF("portrait", "pt", "a4");
-              const data = await document.querySelector("#pdf");
-              pdf.html(data).then(() => {
-                pdf.save("resumePrinted.pdf");
+              // const pdf = new jsPDF("portrait", "pt", "a4");
+              // const data = await document.querySelector("#pdf");
+              // pdf.html(data).then(() => {
+              //   pdf.save("resumePrinted.pdf");
+              // });
+              html2canvas(document.querySelector("#pdf")).then((canvas) => {
+                document.body.appendChild(canvas);
+                console.log(canvas);
+                const pdf = new jsPDF("portrait", "pt", "a4");
+                pdf.addImage(canvas, "JPEG", 0, 0);
+                pdf.save("test.pdf");
               });
             }}
           >
