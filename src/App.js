@@ -11,7 +11,6 @@ function App() {
     education: [
       { name: "name", description: "description", score: "90%" },
       { name: "name", description: "description", score: "90%" },
-
     ],
     skill: ["cpp", "java", "python"],
     socials: [

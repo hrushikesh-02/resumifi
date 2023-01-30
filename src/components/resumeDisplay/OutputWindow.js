@@ -1,7 +1,7 @@
 import React from "react";
-import Education from "../Education.js";
+import Education from "./Education.js";
 import styles from "./OutputWindow.module.css";
-import Projects from "../Projects.js";
+import Projects from "./Projects.js";
 import { useState, useEffect } from "react";
 import Skills from "./Skills.js";
 export default function OutputWindow({ data }) {
