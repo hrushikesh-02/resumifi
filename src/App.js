@@ -23,23 +23,25 @@ function App() {
   });
 
   const [preview, setPreview] = useState(false);
-
+  const [toPrint, setToPrint] = useState(false);
   return (
     <>
       <div className="App">
-        {console.log(preview)}
-        {preview && <AttributeForm data={data} setData={setData} />}
-        <header
+        {!preview && <AttributeForm data={data} setData={setData} />}
+        <div
+          id="divToPrint"
           className="AppOutput"
-          style={{ width: preview ? "60%" : "95%" }}
+          style={{ width: !preview ? "60%" : "95%" }}
         >
-          <OutputWindow data={data} setData={setData} />
-        </header>
+          <OutputWindow id={"printablediv"} data={data} setData={setData} />
+        </div>
         <Customizer
           data={data}
           setData={setData}
           preview={preview}
           setPreview={setPreview}
+          toPrint={toPrint}
+          setToPrint={setToPrint}
         />
       </div>
     </>

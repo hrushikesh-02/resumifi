@@ -3,9 +3,10 @@ import styles from "./Customizer.module.css";
 import Fab from "@mui/material/Fab";
 import PreviewIcon from "@mui/icons-material/Preview";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
+import PrintIcon from "@mui/icons-material/Print";
 import Tooltip from "@mui/material/Tooltip";
 import { ChromePicker } from "react-color";
-import TextFormatRoundedIcon from "@mui/icons-material/TextFormatRounded";
+
 function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -25,7 +26,6 @@ function Customizer(props) {
             aria-label="add"
             onClick={() => {
               props.setPreview((preview) => {
-                console.log(preview);
                 return !preview;
               });
             }}
@@ -70,13 +70,21 @@ function Customizer(props) {
       </div>
       <div className={styles.customizerComponent}>
         <Tooltip
-          title="Font"
+          title="Print"
           placement="left"
           disableFocusListener
           disableTouchListener
         >
-          <Fab size="small" color="secondary" aria-label="add">
-            <TextFormatRoundedIcon />
+          <Fab
+            size="small"
+            color="secondary"
+            aria-label="add"
+            onClick={() => {
+              props.setToPrint((toPrint) => !toPrint);
+              props.setToPrint((toPrint) => !toPrint);
+            }}
+          >
+            <PrintIcon />
           </Fab>
         </Tooltip>
       </div>
