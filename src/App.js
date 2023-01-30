@@ -7,7 +7,7 @@ import Customizer from "./components/resumeCustomizer/Customizer";
 function App() {
   const [data, setData] = useState({
     name: "Shreyash",
-    email:"",
+    email: "",
     education: [
       { name: "name", description: "description", score: "90%" },
       { name: "name", description: "description", score: "70%" },
@@ -17,15 +17,13 @@ function App() {
       { name: "github", link: "https://github.com/" },
       { name: "codechef", link: "https://www.codechef.com/learn" },
     ],
-    projects: [
-      { name: "resumifi", link: "github.com", description: "nil" },
-    ],
+    projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
     achievements: ["4* on codechef", "leetcoder"],
     color: "#000000",
   });
 
   const [preview, setPreview] = useState(false);
-  const [toPrint, setToPrint] = useState(false);
+
   return (
     <>
       <div className="App">
@@ -42,8 +40,6 @@ function App() {
           setData={setData}
           preview={preview}
           setPreview={setPreview}
-          toPrint={toPrint}
-          setToPrint={setToPrint}
         />
       </div>
     </>

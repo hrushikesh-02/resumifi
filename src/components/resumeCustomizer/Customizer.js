@@ -3,10 +3,10 @@ import styles from "./Customizer.module.css";
 import Fab from "@mui/material/Fab";
 import PreviewIcon from "@mui/icons-material/Preview";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
-import PrintIcon from "@mui/icons-material/Print";
+import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import Tooltip from "@mui/material/Tooltip";
 import { ChromePicker } from "react-color";
-
+import { jsPDF } from "jspdf";
 function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -79,12 +79,15 @@ function Customizer(props) {
             size="small"
             color="secondary"
             aria-label="add"
-            onClick={() => {
-              props.setToPrint((toPrint) => !toPrint);
-              props.setToPrint((toPrint) => !toPrint);
+            onClick={async () => {
+              const pdf = new jsPDF("portrait", "pt", "a4");
+              const data = await document.querySelector("#pdf");
+              pdf.html(data).then(() => {
+                pdf.save("resumePrinted.pdf");
+              });
             }}
           >
-            <PrintIcon />
+            <SaveAltIcon />
           </Fab>
         </Tooltip>
       </div>
