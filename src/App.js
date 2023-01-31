@@ -9,8 +9,13 @@ function App() {
     name: "Shreyash",
     email: "",
     education: [
+<<<<<<< HEAD
       { name: "Name", description: "description", score: "90%" },
       
+=======
+      { name: "name", description: "description", score: "90%" },
+      { name: "name", description: "description", score: "90%" },
+>>>>>>> 58e6516e90f4853fd370b04e0654bb1a0c8c72ad
     ],
     skill: ["cpp", "java", "python"],
     socials: [

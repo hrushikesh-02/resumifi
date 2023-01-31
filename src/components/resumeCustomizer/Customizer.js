@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Customizer.module.css";
 import Fab from "@mui/material/Fab";
 import PreviewIcon from "@mui/icons-material/Preview";
@@ -15,6 +15,15 @@ function Customizer(props) {
 
   const [color2, setColor2] = useState("#000000");
   const [showColorPicker2, setShowColorPicker2] = useState(false);
+
+  useEffect(() => {
+    props.setData((prev) => {
+      return { ...prev, color: color };
+    });
+    props.setData((prev) => {
+      return { ...prev, color2: color2 };
+    });
+  }, [props, color, color2]);
 
   return (
     <div className={styles.buttonHolder}>
@@ -53,7 +62,6 @@ function Customizer(props) {
             onClick={() => {
               setShowColorPicker((showColorPicker) => !showColorPicker);
               setShowColorPicker2(false);
-
             }}
           >
             <ColorLensIcon style={{ fill: color }} />
@@ -130,7 +138,9 @@ function Customizer(props) {
                 var width = pdf.internal.pageSize.getWidth(); //increases distortion
                 var height = pdf.internal.pageSize.getHeight(); //increases distortion
                 pdf.addImage(canvas, "JPEG", 0, 0, width, height);
-                pdf.save("test.pdf");
+                var pdfName = props.data.name + ".pdf";
+                console.log(pdfName);
+                pdf.save(pdfName);
               });
             }}
           >
