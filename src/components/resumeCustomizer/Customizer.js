@@ -124,8 +124,8 @@ function Customizer(props) {
             aria-label="add"
             onClick={async () => {
               html2canvas(document.querySelector("#pdf")).then((canvas) => {
-                document.body.appendChild(canvas);
-                console.log(canvas);
+                // document.body.appendChild(canvas);
+                // console.log(canvas);
                 const pdf = new jsPDF("p", "pt", "letter");
                 var width = pdf.internal.pageSize.getWidth(); //increases distortion
                 var height = pdf.internal.pageSize.getHeight(); //increases distortion
@@ -138,6 +138,7 @@ function Customizer(props) {
           </Fab>
         </Tooltip>
       </div>
+      
     </div>
   );
 }

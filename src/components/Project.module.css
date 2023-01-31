@@ -8,8 +8,10 @@
     /* width: 100%; */
     padding-inline: 10px;
     text-align: left;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     /* flex-grow: 1; */
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
 
 }
 .ProjectField{
@@ -17,7 +19,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 0.5rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
 
     /* border-bottom: 1px solid black; */
 }
@@ -29,4 +32,7 @@
 .ProjectField>span{
     font-size: 1rem;
     font-weight: 400;
+}
+.ProjectComponent>i{
+    border-bottom:1px solid black ;
 }

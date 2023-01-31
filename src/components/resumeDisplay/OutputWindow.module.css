@@ -3,6 +3,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
   margin: 0;
+
 }
 
 .wrapper {
@@ -13,11 +14,13 @@
   flex-direction: column;
   /* overflow-x: hidden;
     overflow-y: hidden; */
-  /* flex-wrap: wrap; */
+     /* overflow:; */
+     text-overflow:ellipsis;
+  flex-wrap: wrap;
 }
 .header {
   padding-inline: 10px;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   /* flex-grow: 1; */
   height: 4rem;
   text-align: center;
@@ -25,14 +28,17 @@
 
 a {
   text-decoration: none;
-  
+  padding-inline:5px ;
 }
 
 .sociallinks {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:center;
+ 
   width: 100%;
   font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 .maincontent {
   display: flex;

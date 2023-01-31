@@ -5,9 +5,12 @@
 .EduComponent{
     display: flex;
     flex-direction: column  ;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     text-align: left;
     padding-inline: 10px;
+    font-size: 1.2rem;
+    text-overflow:ellipsis;
+
     /* margin-bottom: 5px; */
 }
 .EducationField{
@@ -15,7 +18,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 0.5rem;
+    padding-top: 0.15rem ;
+    padding-bottom: 0.15rem;
+    /* display: inline-block; */
+
     /* border-bottom: 1px solid black; */
 }
 .EducationField>h2{
@@ -25,5 +31,8 @@
 .EducationField>span{
     font-size: 1rem;
     font-weight: 400;
+}
+.EduComponent>i{
+    border-bottom:1px solid black ;
 }
 

@@ -31,7 +31,7 @@ function Attributeform(props) {
 
       <InputElement
         key={"name"}
-        attributeName={"name"}  
+        attributeName={"name"}
         data={props.data["name"]}
         setData={props.setData}
       />

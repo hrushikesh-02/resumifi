@@ -9,9 +9,8 @@ function App() {
     name: "Shreyash",
     email: "",
     education: [
-      { name: "name", description: "description", score: "90%" },
-      { name: "name", description: "description", score: "90%" },
-
+      { name: "Name", description: "description", score: "90%" },
+      
     ],
     skill: ["cpp", "java", "python"],
     socials: [
