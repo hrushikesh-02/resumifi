@@ -4,7 +4,6 @@ import styles from "./Project.module.css";
 export default function Project({ data }) {
   return (
     <div className={styles.ProjectComponent} style={{ color: `${data.color2}` }}>
-      {/* <u> Projects : </u> */}
       <i>Projects:</i>
       {data.projects.map((project) => {
         return (

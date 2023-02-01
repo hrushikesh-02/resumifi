@@ -6,11 +6,11 @@ import Customizer from "./components/resumeCustomizer/Customizer";
 
 function App() {
   const [data, setData] = useState({
-    name: "Shreyash",
-    email: "",
+    name: "Your Name",
+    email: "abc@email.com",
     education: [
-      { name: "name", description: "description", score: "90%" },
-      { name: "name", description: "description", score: "90%" },
+      { name: "name1", description: "description1", score: "90%" },
+      { name: "name2", description: "description2", score: "95%" },
     ],
     skill: ["cpp", "java", "python"],
     socials: [

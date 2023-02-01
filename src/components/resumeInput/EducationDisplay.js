@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./EducationDisplay.module.css";
-
 import DeleteIcon from "@mui/icons-material/Delete";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -10,7 +9,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Fab from "@mui/material/Fab";
 function EducationDisplay(props) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setOpen(!open);

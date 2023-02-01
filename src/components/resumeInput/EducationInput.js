@@ -13,17 +13,17 @@ function EducationInput(props) {
     score: "",
   });
 
-  const onClickHandler = () => {
+  const onClickEducationHandler = () => {
     if (
-      tempObj.name.trim() === "" ||
+      tempObj.score.trim() === "" ||
       tempObj.description.trim() === "" ||
-      tempObj.score.trim() === ""
+      tempObj.name.trim() === ""
     ) {
-      alert("Please fill all the details to add");
+      return;
     } else {
       props.setData((prev) => {
-        prev[attributeName].push(tempObj);
-        return { ...prev };
+        console.log("something got pushed");
+        return { ...prev, education: [...prev[attributeName]].concat(tempObj) };
       });
       setTempObj(() => {
         return {
@@ -48,11 +48,13 @@ function EducationInput(props) {
             variant="outlined"
             type={props.attributeNumber}
             value={tempObj.name}
-  
             onChange={(e) => {
-              setTempObj({ ...tempObj, name: e.target.value.toUpperCase() });
+              setTempObj({ ...tempObj, name: e.target.value });
             }}
             sx={{ width: "92%" }}
+            inputProps={{ maxLength: 50 }}
+            error={tempObj.name.trim() === ""}
+            helperText={tempObj.name.trim() === "" ? "Name field is empty" : ""}
           />
         </div>
         <div className={styles.marginHolder}>
@@ -65,6 +67,12 @@ function EducationInput(props) {
             }}
             sx={{ width: "92%" }}
             value={tempObj.description}
+            error={tempObj.description.trim() === ""}
+            helperText={
+              tempObj.description.trim() === ""
+                ? "Description field is empty"
+                : ""
+            }
           />
         </div>
         <div className={styles.marginHolder}>
@@ -77,10 +85,20 @@ function EducationInput(props) {
             }}
             sx={{ width: "92%" }}
             value={tempObj.score}
+            inputProps={{ maxLength: 10 }}
+            error={tempObj.score.trim() === ""}
+            helperText={
+              tempObj.score.trim() === "" ? "Score field is empty" : ""
+            }
           />
         </div>
-        <div className={styles.endHolder} onClick={onClickHandler}>
-          <Fab size="medium" color="secondary" aria-label="add">
+        <div className={styles.endHolder}>
+          <Fab
+            size="medium"
+            color="secondary"
+            onClick={onClickEducationHandler}
+            aria-label="add"
+          >
             <AddIcon fontSize="medium" />
           </Fab>
         </div>

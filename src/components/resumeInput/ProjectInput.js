@@ -47,6 +47,7 @@ function ProjectInput(props) {
               setTempObj({ ...tempObj, name: e.target.value.toUpperCase() });
             }}
             sx={{ width: "92%" }}
+            inputProps={{ maxLength: 50 }}
             value={tempObj.name}
           />
         </div>
