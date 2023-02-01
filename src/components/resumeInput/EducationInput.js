@@ -48,12 +48,7 @@ function EducationInput(props) {
             variant="outlined"
             type={props.attributeNumber}
             value={tempObj.name}
-            // onChange={(e) => {
-            //   props.setData((prev) => {
-            //     prev[attributeName] = e.target.value;
-            //     return { ...prev };
-            //   });
-            // }}
+  
             onChange={(e) => {
               setTempObj({ ...tempObj, name: e.target.value.toUpperCase() });
             }}

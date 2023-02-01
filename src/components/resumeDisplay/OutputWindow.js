@@ -1,7 +1,7 @@
 import React from "react";
 import Education from "./Education.js";
 import styles from "./OutputWindow.module.css";
-import Projects from "./Projects.js";
+import Project from "./Project.js";
 import { useState, useEffect } from "react";
 import Skills from "./Skills.js";
 export default function OutputWindow({ data }) {
@@ -49,7 +49,7 @@ export default function OutputWindow({ data }) {
       </div>
       <div className={styles.maincontent}>
         {!isEducationEmpty && <Education data={data} />}
-        {!isProjectEmpty && <Projects data={data} />}
+        {!isProjectEmpty && <Project data={data} />}
         {!isSkillEmpty && <Skills data={data} />}
       </div>
     </div>

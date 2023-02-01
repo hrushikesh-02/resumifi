@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./Project.module.css";
-export default function Projects({ data }) {
+export default function Project({ data }) {
   return (
     <div className={styles.ProjectComponent} style={{ color: `${data.color2}` }}>
       {/* <u> Projects : </u> */}
