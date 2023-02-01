@@ -22,7 +22,6 @@ function EducationInput(props) {
       return;
     } else {
       props.setData((prev) => {
-        console.log("something got pushed");
         return { ...prev, education: [...prev[attributeName]].concat(tempObj) };
       });
       setTempObj(() => {
