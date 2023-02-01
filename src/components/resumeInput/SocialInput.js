@@ -40,6 +40,7 @@ function SocialInput(props) {
               setTempObj({ ...tempObj, name: e.target.value });
             }}
             sx={{ width: "92%" }}
+            inputProps={{ maxLength: 50 }}
           />
         </div>
         <div className={styles.marginHolder}>

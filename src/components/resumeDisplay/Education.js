@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import styles from "./Education.module.css";
 
 export default function Education({ data }) {
-
   return (
     <div className={styles.EduComponent} style={{ color: `${data.color2}` }}>
       {/* <div> Education : </div>;    */}
