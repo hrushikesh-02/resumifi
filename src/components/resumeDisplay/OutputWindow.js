@@ -1,9 +1,9 @@
 import React from "react";
 import Education from "./Education.js";
 import styles from "./OutputWindow.module.css";
-import Project from "./Project.js";
 import { useState, useEffect } from "react";
 import Skills from "./Skills.js";
+import Projects from "./Projects.js"
 export default function OutputWindow({ data }) {
   const [isProjectEmpty, setProjectEmpty] = useState(false);
   const [isEducationEmpty, setEducationEmpty] = useState(false);
@@ -49,7 +49,7 @@ export default function OutputWindow({ data }) {
       </div>
       <div className={styles.maincontent}>
         {!isEducationEmpty && <Education data={data} />}
-        {!isProjectEmpty && <Project data={data} />}
+        {!isProjectEmpty && <Projects data={data} />}
         {!isSkillEmpty && <Skills data={data} />}
       </div>
     </div>
