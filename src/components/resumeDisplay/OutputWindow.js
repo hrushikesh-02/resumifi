@@ -4,11 +4,13 @@ import styles from "./OutputWindow.module.css";
 import { useState, useEffect } from "react";
 import Skills from "./Skills.js";
 import Projects from "./Projects.js"
+import Header from "./Header.js";
 export default function OutputWindow({ data }) {
   const [isProjectEmpty, setProjectEmpty] = useState(false);
   const [isEducationEmpty, setEducationEmpty] = useState(false);
-  const [Emailcheck, setEmail] = useState(false);
   const [isSkillEmpty, setSkillEmpty] = useState(false);
+  const [isHeaderEmpty, setHeaderEmpty] = useState(false);
+
   useEffect(() => {
     if (data.education.length === 0) {
       setEducationEmpty(true);
@@ -20,33 +22,23 @@ export default function OutputWindow({ data }) {
     } else {
       setProjectEmpty(false);
     }
-    if (data.email.length === 0) {
-      setEmail(true);
-    } else {
-      setEmail(false);
-    }
+    
     if (data.skill.length === 0) {
       setSkillEmpty(true);
     } else {
       setSkillEmpty(false);
     }
+    if(data.name.length === 0 && data.email.length === 0){
+      setHeaderEmpty(true)
+    }
+    else{
+      setHeaderEmpty(false)
+    }
   }, [data]);
 
   return (
     <div className={styles.wrapper} id="pdf">
-      <div className={styles.header} style={{ color: `${data.color2}` }}>
-        <h2>{data.name}</h2>
-        <div className={styles.sociallinks}>
-          {data.socials.map((social) => {
-            return (
-              <a href={social.link} key={social.link}>
-                {social.name}
-              </a>
-            );
-          })}
-          {!Emailcheck && <a href={"mailto:" + data.email}>Email</a>}
-        </div>
-      </div>
+       {!isHeaderEmpty && <Header data={data} />}
       <div className={styles.maincontent}>
         {!isEducationEmpty && <Education data={data} />}
         {!isProjectEmpty && <Projects data={data} />}

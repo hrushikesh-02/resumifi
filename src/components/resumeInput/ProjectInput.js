@@ -44,7 +44,7 @@ function ProjectInput(props) {
             variant="outlined"
             type={props.attributeNumber}
             onChange={(e) => {
-              setTempObj({ ...tempObj, name: e.target.value.toUpperCase() });
+              setTempObj({ ...tempObj, name: e.target.value });
             }}
             sx={{ width: "92%" }}
             inputProps={{ maxLength: 50 }}
