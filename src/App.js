@@ -1,8 +1,9 @@
 import "./App.css";
 import AttributeForm from "./components/resumeInput/AttributeForm";
-import { useState } from "react";
 import OutputWindow from "./components/resumeDisplay/OutputWindow";
 import Customizer from "./components/resumeCustomizer/Customizer";
+
+import React, { useState } from "react";
 
 function App() {
   const [data, setData] = useState({

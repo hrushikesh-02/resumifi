@@ -5,8 +5,10 @@ import InputElement from "./InputElement";
 import ProjectInput from "./ProjectInput";
 import SkillInput from "./SkillInput";
 // import React, { useState } from "react";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
-function Attributeform(props) {
+const Attributeform = (props) => {
   // const [data, setData] = useState({
   //   name: "Hrushikesh",
   //   email: "abc@gmail.com",
@@ -25,6 +27,7 @@ function Attributeform(props) {
   //   ],
   //   achievements: ["4* on codechef", "leetcode r"],
   // });
+
   return (
     <div className={styles.formContainer}>
       <div className={styles.header}>Attributes</div>
@@ -68,6 +71,6 @@ function Attributeform(props) {
       />
     </div>
   );
-}
+};
 
 export default Attributeform;

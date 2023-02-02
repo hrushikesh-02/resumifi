@@ -61,9 +61,9 @@ function SkillInput(props) {
       </div>
 
       <div className={styles.chipContainer}>
-        {props.data.skill.map((ele) => {
+        {props.data.skill.map((ele, ind) => {
           return (
-            <div key={ele} className={styles.chipMarginHolder}>
+            <div key={ind} className={styles.chipMarginHolder}>
               <Chip
                 label={ele}
                 onDelete={() => {

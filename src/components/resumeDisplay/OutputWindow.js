@@ -3,7 +3,7 @@ import Education from "./Education.js";
 import styles from "./OutputWindow.module.css";
 import { useState, useEffect } from "react";
 import Skills from "./Skills.js";
-import Projects from "./Projects.js"
+import Projects from "./Projects.js";
 export default function OutputWindow({ data }) {
   const [isProjectEmpty, setProjectEmpty] = useState(false);
   const [isEducationEmpty, setEducationEmpty] = useState(false);

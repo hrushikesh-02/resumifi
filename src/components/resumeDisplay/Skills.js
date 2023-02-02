@@ -5,8 +5,8 @@ export default function Skills({ data }) {
     <div className={styles.skillcomponent} style={{ color: `${data.color2}` }}>
       <i>Skills:</i>
       <div className={styles.skillfield} style={{ color: `${data.color}` }}>
-        {data.skill.map((item) => (
-          <li key={item}>{item}</li>
+        {data.skill.map((item, ind) => (
+          <li key={ind}>{item}</li>
         ))}
       </div>
     </div>
