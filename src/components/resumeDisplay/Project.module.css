@@ -8,8 +8,9 @@
   /* width: 100%; */
   padding-inline: 10px;
   text-align: left;
-
+  font-size: 1.2rem;
   /* flex-grow: 1; */
+  word-break: break-all;
 }
 .ProjectField {
   display: flex;
@@ -17,6 +18,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 0.5rem;
+  /* max-width: 50%; */
 
   /* border-bottom: 1px solid black; */
 }
@@ -28,6 +30,6 @@
   font-size: 1rem;
   font-weight: 400;
 }
-.ProjectComponent>i{
-border-bottom: 1px solid black;
-}
+/* .ProjectComponent > i {
+  border-bottom: 1px solid black;
+} */
