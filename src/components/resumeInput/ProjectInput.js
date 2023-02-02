@@ -16,7 +16,6 @@ function ProjectInput(props) {
   const [isTouched, setIsTouched] = useState(false);
 
   const onClickHandler = () => {
-    console.log("hi");
     if (
       tempObj.name.trim() === "" ||
       tempObj.description.trim() === "" ||

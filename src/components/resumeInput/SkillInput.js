@@ -10,7 +10,8 @@ function SkillInput(props) {
   const [isTouched, setIsTouched] = useState(false);
   const onClickHandler = () => {
     if (!tempObj) {
-      alert("not empty");
+      setIsTouched(true);
+      return;
     } else {
       props.setData((prev) => {
         return { ...prev, skill: [...prev[attributeName]].concat(tempObj) };
