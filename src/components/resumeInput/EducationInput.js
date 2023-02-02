@@ -57,7 +57,11 @@ function EducationInput(props) {
             sx={{ width: "92%" }}
             inputProps={{ maxLength: 50 }}
             error={isTouched && tempObj.name.trim() === ""}
-            helperText={tempObj.name.trim() === "" ? "Name field is empty" : ""}
+            helperText={
+              isTouched && tempObj.name.trim() === ""
+                ? "Name field is empty"
+                : ""
+            }
           />
         </div>
         {/* 
@@ -79,7 +83,7 @@ function EducationInput(props) {
             value={tempObj.description}
             error={isTouched && tempObj.description.trim() === ""}
             helperText={
-              tempObj.description.trim() === ""
+              isTouched && tempObj.description.trim() === ""
                 ? "Description field is empty"
                 : ""
             }
@@ -98,7 +102,9 @@ function EducationInput(props) {
             inputProps={{ maxLength: 10 }}
             error={isTouched && tempObj.score.trim() === ""}
             helperText={
-              tempObj.score.trim() === "" ? "Score field is empty" : ""
+              isTouched && tempObj.score.trim() === ""
+                ? "Score field is empty"
+                : ""
             }
           />
         </div>
