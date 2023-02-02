@@ -13,21 +13,24 @@ function ProjectInput(props) {
     link: "",
   });
 
+  const [isTouched, setIsTouched] = useState(false);
+
   const onClickHandler = () => {
     if (
       tempObj.name.trim() === "" ||
       tempObj.description.trim() === "" ||
       tempObj.link.trim() === ""
     ) {
-      alert("Please fill all the details to add");
+      setIsTouched(true);
+      return;
     } else {
       props.setData((prev) => {
-        prev[attributeName].push(tempObj);
-        setTempObj(() => {
-          return { name: "", description: "", link: "" };
-        });
-        return { ...prev };
+        return { ...prev, projects: [...prev[attributeName]].concat(tempObj) };
       });
+      setTempObj(() => {
+        return { name: "", description: "", link: "" };
+      });
+      setIsTouched(false);
     }
   };
 
@@ -49,6 +52,12 @@ function ProjectInput(props) {
             sx={{ width: "92%" }}
             inputProps={{ maxLength: 50 }}
             value={tempObj.name}
+            error={isTouched && tempObj.name.trim() === ""}
+            helperText={
+              isTouched && tempObj.name.trim() === ""
+                ? "Name field is empty"
+                : ""
+            }
           />
         </div>
         <div className={styles.marginHolder}>
@@ -61,6 +70,12 @@ function ProjectInput(props) {
             }}
             sx={{ width: "92%" }}
             value={tempObj.description}
+            error={isTouched && tempObj.description.trim() === ""}
+            helperText={
+              isTouched && tempObj.description.trim() === ""
+                ? "Description field is empty"
+                : ""
+            }
           />
         </div>
         <div className={styles.marginHolder}>
@@ -73,10 +88,21 @@ function ProjectInput(props) {
             }}
             value={tempObj.link}
             sx={{ width: "92%" }}
+            error={isTouched && tempObj.link.trim() === ""}
+            helperText={
+              isTouched && tempObj.link.trim() === ""
+                ? "Link field is empty"
+                : ""
+            }
           />
         </div>
-        <div className={styles.endHolder} onClick={onClickHandler}>
-          <Fab size="medium" color="secondary" aria-label="add">
+        <div className={styles.endHolder}>
+          <Fab
+            size="medium"
+            color="secondary"
+            aria-label="add"
+            onClick={onClickHandler}
+          >
             <AddIcon fontSize="medium" />
           </Fab>
         </div>

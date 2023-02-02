@@ -13,12 +13,15 @@ function EducationInput(props) {
     score: "",
   });
 
+  const [isTouched, setIsTouched] = useState(false);
+
   const onClickEducationHandler = () => {
     if (
       tempObj.score.trim() === "" ||
       tempObj.description.trim() === "" ||
       tempObj.name.trim() === ""
     ) {
+      setIsTouched(true);
       return;
     } else {
       props.setData((prev) => {
@@ -31,6 +34,7 @@ function EducationInput(props) {
           score: "",
         };
       });
+      setIsTouched(false);
     }
   };
 
@@ -52,10 +56,21 @@ function EducationInput(props) {
             }}
             sx={{ width: "92%" }}
             inputProps={{ maxLength: 50 }}
-            error={tempObj.name.trim() === ""}
-            helperText={tempObj.name.trim() === "" ? "Name field is empty" : ""}
+            error={isTouched && tempObj.name.trim() === ""}
+            helperText={
+              isTouched && tempObj.name.trim() === ""
+                ? "Name field is empty"
+                : ""
+            }
           />
         </div>
+        {/* 
+            istouch  isempty
+              t         t       ->  t
+              f         f       ->  f
+              t         f       ->  f
+              f         t       ->  f
+        */}
         <div className={styles.marginHolder}>
           <TextField
             id="outlined-basic"
@@ -66,9 +81,9 @@ function EducationInput(props) {
             }}
             sx={{ width: "92%" }}
             value={tempObj.description}
-            error={tempObj.description.trim() === ""}
+            error={isTouched && tempObj.description.trim() === ""}
             helperText={
-              tempObj.description.trim() === ""
+              isTouched && tempObj.description.trim() === ""
                 ? "Description field is empty"
                 : ""
             }
@@ -85,9 +100,11 @@ function EducationInput(props) {
             sx={{ width: "92%" }}
             value={tempObj.score}
             inputProps={{ maxLength: 10 }}
-            error={tempObj.score.trim() === ""}
+            error={isTouched && tempObj.score.trim() === ""}
             helperText={
-              tempObj.score.trim() === "" ? "Score field is empty" : ""
+              isTouched && tempObj.score.trim() === ""
+                ? "Score field is empty"
+                : ""
             }
           />
         </div>
