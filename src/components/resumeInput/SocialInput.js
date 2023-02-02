@@ -11,16 +11,21 @@ function SocialInput(props) {
     name: "",
     link: "",
   });
-
+  const [isTouched, setIsTouched] = useState(false);
   const onClickHandler = () => {
     if (tempObj.name.trim() === "" || tempObj.link.trim() === "") {
-      alert("Please fill all the details to add");
+      setIsTouched(true);
+      return;
     } else {
       props.setData((prev) => {
-        prev[attributeName].push(tempObj);
-        setTempObj({ name: "", link: "" });
-        return { ...prev };
+        return { ...prev, socials: [...prev[attributeName]].concat(tempObj) };
       });
+
+      setTempObj(() => {
+        return { name: "", link: "" };
+      });
+
+      setIsTouched(false);
     }
   };
   return (
@@ -41,6 +46,12 @@ function SocialInput(props) {
             }}
             sx={{ width: "92%" }}
             inputProps={{ maxLength: 50 }}
+            error={isTouched && tempObj.name.trim() === ""}
+            helperText={
+              isTouched && tempObj.name.trim() === ""
+                ? "Name field is empty"
+                : ""
+            }
           />
         </div>
         <div className={styles.marginHolder}>
@@ -53,10 +64,21 @@ function SocialInput(props) {
             }}
             sx={{ width: "92%" }}
             value={tempObj.link}
+            error={isTouched && tempObj.link.trim() === ""}
+            helperText={
+              isTouched && tempObj.link.trim() === ""
+                ? "Link field is empty"
+                : ""
+            }
           />
         </div>
-        <div className={styles.endHolder} onClick={onClickHandler}>
-          <Fab size="medium" color="secondary" aria-label="add">
+        <div className={styles.endHolder}>
+          <Fab
+            size="medium"
+            color="secondary"
+            aria-label="add"
+            onClick={onClickHandler}
+          >
             <AddIcon fontSize="medium" />
           </Fab>
         </div>

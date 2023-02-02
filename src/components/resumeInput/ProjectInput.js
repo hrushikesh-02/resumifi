@@ -31,6 +31,7 @@ function ProjectInput(props) {
       setTempObj(() => {
         return { name: "", description: "", link: "" };
       });
+      setIsTouched(false);
     }
   };
 
@@ -73,7 +74,7 @@ function ProjectInput(props) {
             error={isTouched && tempObj.description.trim() === ""}
             helperText={
               isTouched && tempObj.description.trim() === ""
-                ? "Name field is empty"
+                ? "Description field is empty"
                 : ""
             }
           />
@@ -91,13 +92,18 @@ function ProjectInput(props) {
             error={isTouched && tempObj.link.trim() === ""}
             helperText={
               isTouched && tempObj.link.trim() === ""
-                ? "Name field is empty"
+                ? "Link field is empty"
                 : ""
             }
           />
         </div>
-        <div className={styles.endHolder} onClick={onClickHandler}>
-          <Fab size="medium" color="secondary" aria-label="add">
+        <div className={styles.endHolder}>
+          <Fab
+            size="medium"
+            color="secondary"
+            aria-label="add"
+            onClick={onClickHandler}
+          >
             <AddIcon fontSize="medium" />
           </Fab>
         </div>

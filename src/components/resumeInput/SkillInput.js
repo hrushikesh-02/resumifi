@@ -5,17 +5,22 @@ import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import Chip from "@mui/material/Chip";
 function SkillInput(props) {
+  let attributeName = props.attributeName;
   const [tempObj, setTempObj] = useState("");
-
+  const [isTouched, setIsTouched] = useState(false);
   const onClickHandler = () => {
     if (!tempObj) {
       alert("not empty");
     } else {
       props.setData((prev) => {
-        prev["skill"].push(tempObj);
-        setTempObj("");
-        return { ...prev };
+        return { ...prev, skill: [...prev[attributeName]].concat(tempObj) };
       });
+
+      setTempObj(() => {
+        return "";
+      });
+
+      setIsTouched(false);
     }
   };
 
@@ -35,6 +40,10 @@ function SkillInput(props) {
             }}
             sx={{ width: "92%" }}
             value={tempObj}
+            error={isTouched && tempObj.trim() === ""}
+            helperText={
+              isTouched && tempObj.trim() === "" ? "Skill field is empty" : ""
+            }
           />
         </div>
         <div className={styles.marginHolder}></div>
