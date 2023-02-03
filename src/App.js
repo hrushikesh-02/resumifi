@@ -35,7 +35,7 @@ function App() {
           className="AppOutput"
           style={{ width: !preview ? "60%" : "95%" }}
         >
-          <OutputWindow id={"printablediv"} data={data} setData={setData} />
+          <OutputWindow data={data} setData={setData} />
         </div>
         <Customizer
           data={data}

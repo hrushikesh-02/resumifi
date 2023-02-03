@@ -4,9 +4,7 @@ import EducationInput from "./EducationInput";
 import InputElement from "./InputElement";
 import ProjectInput from "./ProjectInput";
 import SkillInput from "./SkillInput";
-// import React, { useState } from "react";
-import React, { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
+import React from "react";
 
 const Attributeform = (props) => {
   // const [data, setData] = useState({

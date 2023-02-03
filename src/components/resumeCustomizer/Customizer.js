@@ -6,8 +6,6 @@ import ColorLensIcon from "@mui/icons-material/ColorLens";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import Tooltip from "@mui/material/Tooltip";
 import { ChromePicker } from "react-color";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
 
 function Customizer(props) {
   const [color, setColor] = useState("#000000");
@@ -16,6 +14,16 @@ function Customizer(props) {
   const [color2, setColor2] = useState("#000000");
   const [showColorPicker2, setShowColorPicker2] = useState(false);
 
+  function printPageArea(areaID) {
+    window.open();
+    let printContent = document.getElementById(areaID).innerHTML;
+    let originalContent = document.body.innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    // document.body.innerHTML = originalContent;
+
+    // Site getting jammed after clicking on print button
+  }
   useEffect(() => {
     props.setData((prev) => {
       return { ...prev, color: color };
@@ -123,32 +131,21 @@ function Customizer(props) {
         <Tooltip
           title="Print"
           placement="left"
-          disableFocusListener
-          disableTouchListener
+          // disableFocusListener
+          // disableTouchListener
         >
           <Fab
             size="small"
             color="secondary"
             aria-label="add"
-            onClick={async () => {
-              html2canvas(document.querySelector("#pdf")).then((canvas) => {
-                // document.body.appendChild(canvas);
-                // console.log(canvas);
-                const pdf = new jsPDF("p", "pt", "letter");
-                var width = pdf.internal.pageSize.getWidth(); //increases distortion
-                var height = pdf.internal.pageSize.getHeight(); //increases distortion
-                pdf.addImage(canvas, "JPEG", 0, 0, width, height);
-                var pdfName = props.data.name + ".pdf";
-                console.log(pdfName);
-                pdf.save(pdfName);
-              });
+            onClick={() => {
+              printPageArea("pdf");
             }}
           >
             <SaveAltIcon />
           </Fab>
         </Tooltip>
       </div>
-      
     </div>
   );
 }
