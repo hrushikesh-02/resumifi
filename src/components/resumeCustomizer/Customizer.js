@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Customizer.module.css";
 import Fab from "@mui/material/Fab";
 import PreviewIcon from "@mui/icons-material/Preview";
@@ -6,7 +6,7 @@ import ColorLensIcon from "@mui/icons-material/ColorLens";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import Tooltip from "@mui/material/Tooltip";
 import { ChromePicker } from "react-color";
-
+import { useReactToPrint } from "react-to-print";
 function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -14,24 +14,9 @@ function Customizer(props) {
   const [color2, setColor2] = useState("#000000");
   const [showColorPicker2, setShowColorPicker2] = useState(false);
 
-  function printPageArea(areaID) {
-    window.open();
-    let printContent = document.getElementById(areaID).innerHTML;
-    let originalContent = document.body.innerHTML;
-    document.body.innerHTML = printContent;
-    window.print();
-    // document.body.innerHTML = originalContent;
-
-    // Site getting jammed after clicking on print button
-  }
-  useEffect(() => {
-    props.setData((prev) => {
-      return { ...prev, color: color };
-    });
-    props.setData((prev) => {
-      return { ...prev, color2: color2 };
-    });
-  }, [props, color, color2]);
+  const handlePrint = useReactToPrint({
+    content: () => props.forwardedRef.current,
+  });
 
   return (
     <div className={styles.buttonHolder}>
@@ -84,7 +69,7 @@ function Customizer(props) {
               onChange={(updatedColor) => {
                 setColor(updatedColor.hex);
                 props.setData((prev) => {
-                  return { ...prev, color: color };
+                  return { ...prev, color: updatedColor.hex };
                 });
               }}
             />
@@ -120,7 +105,7 @@ function Customizer(props) {
               onChange={(updatedColor) => {
                 setColor2(updatedColor.hex);
                 props.setData((prev) => {
-                  return { ...prev, color2: color2 };
+                  return { ...prev, color2: updatedColor.hex };
                 });
               }}
             />
@@ -131,15 +116,16 @@ function Customizer(props) {
         <Tooltip
           title="Print"
           placement="left"
-          // disableFocusListener
-          // disableTouchListener
+          disableFocusListener
+          disableTouchListener
         >
           <Fab
             size="small"
             color="secondary"
             aria-label="add"
             onClick={() => {
-              printPageArea("pdf");
+              console.log("print Button was called");
+              handlePrint();
             }}
           >
             <SaveAltIcon />

@@ -3,9 +3,15 @@ import AttributeForm from "./components/resumeInput/AttributeForm";
 import OutputWindow from "./components/resumeDisplay/OutputWindow";
 import Customizer from "./components/resumeCustomizer/Customizer";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function App() {
+  const childRef = useRef(null);
+
+  // useEffect(() => {
+  //   console.log(childRef.current);
+  // }, []);
+
   const [data, setData] = useState({
     name: "Your Name",
     email: "abc@email.com",
@@ -35,13 +41,14 @@ function App() {
           className="AppOutput"
           style={{ width: !preview ? "60%" : "95%" }}
         >
-          <OutputWindow data={data} setData={setData} />
+          <OutputWindow forwardedRef={childRef} data={data} setData={setData} />
         </div>
         <Customizer
           data={data}
           setData={setData}
           preview={preview}
           setPreview={setPreview}
+          forwardedRef={childRef}
         />
       </div>
     </>
