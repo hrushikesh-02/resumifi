@@ -31,15 +31,25 @@ function App() {
   });
 
   const [preview, setPreview] = useState(false);
+  const [printScale, setPrintScale] = useState(false);
 
-  
+  let width = window.innerWidth;
 
   return (
     <>
       <div className="App">
         {!preview && <AttributeForm data={data} setData={setData} />}
-        <div className="AppOutput" style={{ width: !preview ? "60%" : "95%" }}>
-          <OutputWindow forwardedRef={childRef} data={data} setData={setData} />
+        <div
+          className="AppOutput"
+          style={{ width: !preview ? (width < 1300 ? "75%" : "60%") : "95%" }}
+        >
+          <OutputWindow
+            printScale={printScale}
+            forwardedRef={childRef}
+            data={data}
+            setData={setData}
+            preview={preview}
+          />
         </div>
         <Customizer
           data={data}
@@ -47,6 +57,8 @@ function App() {
           preview={preview}
           setPreview={setPreview}
           forwardedRef={childRef}
+          printScale={printScale}
+          setPrintScale={setPrintScale}
         />
       </div>
     </>

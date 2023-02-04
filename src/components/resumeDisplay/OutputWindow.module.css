@@ -1,26 +1,40 @@
 .wrapper {
-  aspect-ratio: 1/1.414;
+  /* aspect-ratio: 1/1.414; */
   background-color: white;
-  /* background-color: black; */
+  background-color: pink;
   /* min-height: 95vh;
   max-height: 95vh; */
   display: flex;
   flex-direction: column;
-  /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
-  flex-wrap: wrap;
-  width: 800px;
+  min-width: 800px;
   height: 1130px;
-  /* transform: translate(); */
+  overflow-y: hidden;
 }
 .maincontent {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: calc(100% - 4rem);
   flex-grow: 1;
-  /* width: fit-content; */
   max-width: 50%;
-  /* height: 80vh; */
-  /* background-color: red; */
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .wrapper {
+    max-height: 100%;
+    overflow: hidden;
+    page-break-after: always;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    display: none;
+    z-index: 100;
+    min-width: 100%;
+  }
 }

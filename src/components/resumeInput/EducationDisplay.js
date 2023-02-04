@@ -50,6 +50,7 @@ function EducationDisplay(props) {
         size="small"
         color="#ebebeb"
         aria-label="add"
+        sx={{ zIndex: "0" }}
         className="hidden group-hover:block bg-red-900"
         onClick={() => {
           props.setData((oldValues) => {

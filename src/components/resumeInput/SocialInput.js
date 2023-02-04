@@ -44,7 +44,7 @@ function SocialInput(props) {
             onChange={(e) => {
               setTempObj({ ...tempObj, name: e.target.value });
             }}
-            sx={{ width: "92%" }}
+            sx={{ width: "92%", zIndex: "0" }}
             inputProps={{ maxLength: 50 }}
             error={isTouched && tempObj.name.trim() === ""}
             helperText={
@@ -62,7 +62,7 @@ function SocialInput(props) {
             onChange={(e) => {
               setTempObj({ ...tempObj, link: e.target.value });
             }}
-            sx={{ width: "92%" }}
+            sx={{ width: "92%", zIndex: "0" }}
             value={tempObj.link}
             error={isTouched && tempObj.link.trim() === ""}
             helperText={

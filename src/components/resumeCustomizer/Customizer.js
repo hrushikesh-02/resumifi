@@ -19,6 +19,13 @@ function Customizer(props) {
     content: () => props.forwardedRef.current,
   });
 
+  const handlePrintScaleTrue = () => {
+    props.setPrintScale(true);
+  };
+  const handlePrintScaleFalse = () => {
+    props.setPrintScale(false);
+  };
+
   return (
     <div className={styles.buttonHolder}>
       <div className={styles.customizerComponent}>
@@ -124,8 +131,10 @@ function Customizer(props) {
             size="small"
             color="secondary"
             aria-label="add"
-            onClick={() => {
+            onClick={async () => {
+              await handlePrintScaleTrue();
               handlePrint();
+              handlePrintScaleFalse();
             }}
           >
             <SaveAltIcon />

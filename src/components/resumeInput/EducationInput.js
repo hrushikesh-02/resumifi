@@ -54,7 +54,7 @@ function EducationInput(props) {
             onChange={(e) => {
               setTempObj({ ...tempObj, name: e.target.value });
             }}
-            sx={{ width: "92%" }}
+            sx={{ width: "92%", zIndex: "0" }}
             inputProps={{ maxLength: 50 }}
             error={isTouched && tempObj.name.trim() === ""}
             helperText={
@@ -79,7 +79,7 @@ function EducationInput(props) {
             onChange={(e) => {
               setTempObj({ ...tempObj, description: e.target.value });
             }}
-            sx={{ width: "92%" }}
+            sx={{ width: "92%", zIndex: "0" }}
             value={tempObj.description}
             error={isTouched && tempObj.description.trim() === ""}
             helperText={
@@ -97,7 +97,7 @@ function EducationInput(props) {
             onChange={(e) => {
               setTempObj({ ...tempObj, score: e.target.value });
             }}
-            sx={{ width: "92%" }}
+            sx={{ width: "92%", zIndex: "0" }}
             value={tempObj.score}
             inputProps={{ maxLength: 10 }}
             error={isTouched && tempObj.score.trim() === ""}
@@ -114,6 +114,7 @@ function EducationInput(props) {
             color="secondary"
             onClick={onClickEducationHandler}
             aria-label="add"
+            sx={{ zIndex: "0" }}
           >
             <AddIcon fontSize="medium" />
           </Fab>

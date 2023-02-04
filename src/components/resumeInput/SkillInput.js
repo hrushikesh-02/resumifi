@@ -39,7 +39,7 @@ function SkillInput(props) {
             onChange={(e) => {
               setTempObj(e.target.value);
             }}
-            sx={{ width: "92%" }}
+            sx={{ width: "92%", zIndex: "0" }}
             value={tempObj}
             error={isTouched && tempObj.trim() === ""}
             helperText={

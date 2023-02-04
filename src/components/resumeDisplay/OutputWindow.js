@@ -36,16 +36,20 @@ export default function OutputWindow(props) {
   }, [props.data]);
 
   let height = window.innerHeight;
-
-  
+  let width = window.innerWidth;
 
   return (
     <div
       className={styles.wrapper}
       id="pdf"
       ref={props.forwardedRef}
-      style={{ scale: `${height / 1130}` }}
+      style={{
+        display: height > width ? (!props.preview ? "none" : "block") : "flex",
+        scale:
+          height > width ? "1" : props.printScale ? "1" : `${height / 1200}`,
+      }}
     >
+      {/* The original dimensions that the react-to-print uses are 800px as width and 1130 as height */}
       {!isHeaderEmpty && <Header data={props.data} />}
       <div className={styles.maincontent}>
         {!isEducationEmpty && <Education data={props.data} />}

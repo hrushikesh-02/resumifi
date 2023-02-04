@@ -11,7 +11,7 @@ const InputElement = (props) => {
       <div className={styles.attributeInput}>
         <TextField
           id="outlined-basic"
-          label="Outlined"
+          label={attributeName}
           variant="outlined"
           type={props.attributeNumber}
           value={props.data}
@@ -22,7 +22,7 @@ const InputElement = (props) => {
               return { ...prev };
             });
           }}
-          sx={{ width: "90%" }}
+          sx={{ width: "90%", zIndex: "0" }}
           error={isTouched && props.data.trim() === ""}
           helperText={
             props.data.trim() === ""
