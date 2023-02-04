@@ -7,6 +7,7 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import Tooltip from "@mui/material/Tooltip";
 import { ChromePicker } from "react-color";
 import { useReactToPrint } from "react-to-print";
+
 function Customizer(props) {
   const [color, setColor] = useState("#000000");
   const [showColorPicker, setShowColorPicker] = useState(false);
@@ -124,7 +125,6 @@ function Customizer(props) {
             color="secondary"
             aria-label="add"
             onClick={() => {
-              console.log("print Button was called");
               handlePrint();
             }}
           >

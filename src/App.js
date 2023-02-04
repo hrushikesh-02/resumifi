@@ -32,15 +32,13 @@ function App() {
 
   const [preview, setPreview] = useState(false);
 
+  
+
   return (
     <>
       <div className="App">
         {!preview && <AttributeForm data={data} setData={setData} />}
-        <div
-          id="divToPrint"
-          className="AppOutput"
-          style={{ width: !preview ? "60%" : "95%" }}
-        >
+        <div className="AppOutput" style={{ width: !preview ? "60%" : "95%" }}>
           <OutputWindow forwardedRef={childRef} data={data} setData={setData} />
         </div>
         <Customizer

@@ -35,8 +35,17 @@ export default function OutputWindow(props) {
     }
   }, [props.data]);
 
+  let height = window.innerHeight;
+
+  
+
   return (
-    <div className={styles.wrapper} id="pdf" ref={props.forwardedRef}>
+    <div
+      className={styles.wrapper}
+      id="pdf"
+      ref={props.forwardedRef}
+      style={{ scale: `${height / 1130}` }}
+    >
       {!isHeaderEmpty && <Header data={props.data} />}
       <div className={styles.maincontent}>
         {!isEducationEmpty && <Education data={props.data} />}

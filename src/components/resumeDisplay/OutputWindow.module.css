@@ -1,13 +1,17 @@
 .wrapper {
   aspect-ratio: 1/1.414;
   background-color: white;
-  min-height: 95vh;
-  max-height: 95vh;
+  /* background-color: black; */
+  /* min-height: 95vh;
+  max-height: 95vh; */
   display: flex;
   flex-direction: column;
-  /* overflow-x: hidden;
-    overflow-y: hidden; */
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
   flex-wrap: wrap;
+  width: 800px;
+  height: 1130px;
+  /* transform: translate(); */
 }
 .maincontent {
   display: flex;
@@ -18,4 +22,5 @@
   /* width: fit-content; */
   max-width: 50%;
   /* height: 80vh; */
+  /* background-color: red; */
 }
