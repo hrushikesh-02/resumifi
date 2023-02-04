@@ -102,6 +102,7 @@ function ProjectInput(props) {
             color="secondary"
             aria-label="add"
             onClick={onClickHandler}
+            sx={{ zIndex: "0" }}
           >
             <AddIcon fontSize="medium" />
           </Fab>

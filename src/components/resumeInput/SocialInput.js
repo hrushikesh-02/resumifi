@@ -77,6 +77,7 @@ function SocialInput(props) {
             size="medium"
             color="secondary"
             aria-label="add"
+            sx={{ zIndex: "0" }}
             onClick={onClickHandler}
           >
             <AddIcon fontSize="medium" />
@@ -98,6 +99,7 @@ function SocialInput(props) {
                   size="small"
                   color="#ebebeb"
                   aria-label="add"
+                  sx={{ zIndex: "0" }}
                   onClick={() => {
                     props.setData((oldValues) => {
                       return {

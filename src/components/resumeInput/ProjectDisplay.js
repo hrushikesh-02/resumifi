@@ -51,6 +51,7 @@ function ProjectDisplay(props) {
         size="small"
         color="#ebebeb"
         aria-label="add"
+        sx={{ zIndex: "0" }}
         onClick={() => {
           props.setData((oldValues) => {
             return {

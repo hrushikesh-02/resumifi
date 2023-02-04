@@ -55,6 +55,7 @@ function SkillInput(props) {
           color="secondary"
           onClick={onClickHandler}
           aria-label="add"
+          sx={{ zIndex: "0" }}
         >
           <AddIcon fontSize="medium" />
         </Fab>
