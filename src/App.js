@@ -38,7 +38,9 @@ function App() {
   return (
     <>
       <div className="App">
-        {!preview && <AttributeForm data={data} setData={setData} />}
+        {!preview && (
+          <AttributeForm data={data} setData={setData} preview={preview} />
+        )}
         <div
           className="AppOutput"
           style={{ width: !preview ? (width < 1300 ? "75%" : "60%") : "95%" }}

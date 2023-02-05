@@ -44,7 +44,6 @@ export default function OutputWindow(props) {
       id="pdf"
       ref={props.forwardedRef}
       style={{
-        display: height > width ? (!props.preview ? "none" : "block") : "flex",
         scale:
           height > width ? "1" : props.printScale ? "1" : `${height / 1200}`,
       }}

@@ -28,8 +28,9 @@
 @media only screen and (max-width: 600px) {
   .formContainer {
     min-width: 100%;
-    min-height: 80vh;
-    /* background-color: red; */
+    min-height: 90vh;
     margin-bottom: 6rem;
+    z-index: 100;
+    border-radius: 0;
   }
 }

@@ -25,9 +25,16 @@ const Attributeform = (props) => {
   //   ],
   //   achievements: ["4* on codechef", "leetcode r"],
   // });
-  // let width = window.innerWidth (width < 1300 ? "30%" : to form container);
+  let height = window.innerHeight;
+  let width = window.innerWidth;
   return (
-    <div className={styles.formContainer} style={{ width: "40%" }}>
+    <div
+      className={styles.formContainer}
+      style={{
+        width: "40%",
+        display: height > width ? (props.preview ? "none" : "flex") : "flex",
+      }}
+    >
       <div className={styles.header}>Attributes</div>
 
       <InputElement
