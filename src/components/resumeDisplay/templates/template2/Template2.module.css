@@ -68,6 +68,7 @@
   overflow: hidden;
   color: white;
   border-bottom: 1px solid white;
+  margin-bottom: 0.5rem;
 }
 
 .outputList {
@@ -79,6 +80,7 @@
 
 .outputListElement {
   color: white;
+  padding: 0;
 }
 
 @media only screen and (max-width: 600px) {

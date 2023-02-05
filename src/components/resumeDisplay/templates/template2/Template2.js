@@ -8,13 +8,22 @@ function Template2(props) {
         <div className={styles.leftWrapper}>
           <div className={styles.header}>{props.data.name}</div>
           <div className={styles.blobLHS}>
-            <div className={styles.outputList}>
-              <div>
+            <div className={styles.outputList} style={{ width: "100%" }}>
+              <div
+                className={styles.outputListElement}
+                style={{
+                  borderBottom: "1px solid ",
+                  color: "black",
+                  display: "flex",
+                  width: "100%",
+                  marginBottom: "1rem",
+                }}
+              >
                 <b>EDUCATION</b>
               </div>
-              {props.data.education.map((ele) => {
+              {props.data.education.map((ele, ind) => {
                 return (
-                  <div className={styles.outputListWrapper}>
+                  <div key={ind} className={styles.outputListWrapper}>
                     <div
                       className={styles.outputListElement}
                       style={{ display: "flex", color: "black" }}
@@ -40,18 +49,27 @@ function Template2(props) {
           </div>
           <div className={styles.blobLHS}>
             <div className={styles.outputList}>
-              <div>
+              <div
+                className={styles.outputListElement}
+                style={{
+                  borderBottom: "1px solid ",
+                  color: "black",
+                  display: "flex",
+                  width: "100%",
+                  marginBottom: "1rem",
+                }}
+              >
                 <b>PROJECTS</b>
               </div>
-              {props.data.projects.map((ele) => {
+              {props.data.projects.map((ele, ind) => {
                 return (
-                  <div className={styles.outputListWrapper}>
+                  <div key={ind} className={styles.outputListWrapper}>
                     <div
                       className={styles.outputListElement}
                       style={{
-                        borderBottom: "1px solid ",
                         color: "black",
                         display: "flex",
+                        fontWeight: "500",
                       }}
                     >
                       {ele.name}
@@ -79,8 +97,12 @@ function Template2(props) {
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Skills</div>
             <div className={styles.outputList}>
-              {props.data.skill.map((ele) => {
-                return <div className={styles.outputListElement}>{ele}</div>;
+              {props.data.skill.map((ele, ind) => {
+                return (
+                  <div key={ind} className={styles.outputListElement}>
+                    {ele}
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -88,9 +110,9 @@ function Template2(props) {
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Links</div>
             <div className={styles.outputList}>
-              {props.data.socials.map((ele) => {
+              {props.data.socials.map((ele, ind) => {
                 return (
-                  <div>
+                  <div key={ind}>
                     <a className={styles.outputListElement} href={ele.link}>
                       {ele.name}
                     </a>
