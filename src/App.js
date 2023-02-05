@@ -32,6 +32,7 @@ function App() {
 
   const [preview, setPreview] = useState(false);
   const [printScale, setPrintScale] = useState(false);
+  const [templateNumber, setTemplateNumber] = useState(0);
 
   let width = window.innerWidth;
 
@@ -51,6 +52,7 @@ function App() {
             data={data}
             setData={setData}
             preview={preview}
+            templateNumber={templateNumber}
           />
         </div>
         <Customizer
@@ -61,6 +63,8 @@ function App() {
           forwardedRef={childRef}
           printScale={printScale}
           setPrintScale={setPrintScale}
+          templateNumber={templateNumber}
+          setTemplateNumber={setTemplateNumber}
         />
       </div>
     </>

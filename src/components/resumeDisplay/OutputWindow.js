@@ -49,12 +49,21 @@ export default function OutputWindow(props) {
       }}
     >
       {/* The original dimensions that the react-to-print uses are 800px as width and 1130 as height */}
-      {!isHeaderEmpty && <Header data={props.data} />}
-      <div className={styles.maincontent}>
-        {!isEducationEmpty && <Education data={props.data} />}
-        {!isProjectEmpty && <Projects data={props.data} />}
-        {!isSkillEmpty && <Skills data={props.data} />}
-      </div>
+
+      {props.templateNumber + 1 === 1 && (
+        <div>
+          {!isHeaderEmpty && <Header data={props.data} />}
+          <div className={styles.maincontent}>
+            {!isEducationEmpty && <Education data={props.data} />}
+            {!isProjectEmpty && <Projects data={props.data} />}
+            {!isSkillEmpty && <Skills data={props.data} />}
+          </div>
+        </div>
+      )}
+
+      {props.templateNumber + 1 === 2 && (
+        <div style={{ font: "black" }}>page 2</div>
+      )}
     </div>
   );
 }

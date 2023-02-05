@@ -51,6 +51,25 @@ function Customizer(props) {
       </div>
       <div className={styles.customizerComponent}>
         <Tooltip
+          title="Print"
+          placement="left"
+          disableFocusListener
+          disableTouchListener
+        >
+          <Fab
+            size="small"
+            color="secondary"
+            aria-label="add"
+            onClick={async () => {
+              await props.setTemplateNumber((curr) => (curr + 1) % 3);
+            }}
+          >
+            {props.templateNumber + 1}
+          </Fab>
+        </Tooltip>
+      </div>
+      <div className={styles.customizerComponent}>
+        <Tooltip
           title="Color-1"
           placement="left"
           disableFocusListener
