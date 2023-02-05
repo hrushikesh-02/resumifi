@@ -1,0 +1,88 @@
+.wrapper {
+  /* width: 100%;
+  background-color: red;
+  height: 100%; */
+  display: flex;
+  min-width: 800px;
+  height: 1130px;
+  overflow-y: hidden;
+}
+
+.leftWrapper {
+  width: 60%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  height: 3rem;
+  font-size: 2.5rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.blobLHS {
+  width: 80%;
+  /* background-color: lightcoral; */
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.outputListWrapper {
+  margin-bottom: 1rem;
+}
+
+.rightWrapper {
+  width: 40%;
+  height: 100%;
+  background-color: rgb(50, 59, 76);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.blobRHS {
+  width: 80%;
+  height: 25%;
+  /* background-color: rgb(151, 157, 34); */
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.attributeTitle {
+  display: flex;
+  overflow: hidden;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.outputList {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 0;
+}
+
+.outputListElement {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    margin-bottom: 6rem;
+  }
+}

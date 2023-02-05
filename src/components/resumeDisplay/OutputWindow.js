@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Skills from "./Skills.js";
 import Projects from "./Projects.js";
 import Header from "./Header.js";
+import Template2 from "./templates/template2/Template2.js";
 export default function OutputWindow(props) {
   const [isProjectEmpty, setProjectEmpty] = useState(false);
   const [isEducationEmpty, setEducationEmpty] = useState(false);
@@ -61,9 +62,7 @@ export default function OutputWindow(props) {
         </div>
       )}
 
-      {props.templateNumber + 1 === 2 && (
-        <div style={{ font: "black" }}>page 2</div>
-      )}
+      {props.templateNumber + 1 === 2 && <Template2 data={props.data} />}
     </div>
   );
 }

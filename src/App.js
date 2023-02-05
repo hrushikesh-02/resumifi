@@ -24,7 +24,19 @@ function App() {
       { name: "github", link: "https://github.com/" },
       { name: "codechef", link: "https://www.codechef.com/learn" },
     ],
-    projects: [{ name: "resumifi", link: "github.com", description: "nil" }],
+    projects: [
+      {
+        name: "resumifi",
+        link: "https://github.com/",
+        description:
+          "A react projects used to construct resume for one according to his need.",
+      },
+      {
+        name: "weatherApp",
+        link: "https://github.com/",
+        description: "A simple vanilla js project to display the weather ",
+      },
+    ],
     achievements: ["4* on codechef", "leetcoder"],
     color: "#000000",
     color2: "#000000",
@@ -32,7 +44,7 @@ function App() {
 
   const [preview, setPreview] = useState(false);
   const [printScale, setPrintScale] = useState(false);
-  const [templateNumber, setTemplateNumber] = useState(0);
+  const [templateNumber, setTemplateNumber] = useState(1);
 
   let width = window.innerWidth;
 

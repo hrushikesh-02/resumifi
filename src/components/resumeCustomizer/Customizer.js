@@ -51,7 +51,7 @@ function Customizer(props) {
       </div>
       <div className={styles.customizerComponent}>
         <Tooltip
-          title="Print"
+          title="Template"
           placement="left"
           disableFocusListener
           disableTouchListener
