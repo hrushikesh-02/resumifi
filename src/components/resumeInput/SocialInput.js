@@ -30,9 +30,6 @@ function SocialInput(props) {
   };
   return (
     <div className={styles.inputElement}>
-      <div className={styles.attributeName}>
-        <b>Links</b>
-      </div>
       <div className={styles.attributeInput}>
         <div className={styles.marginHolder}>
           <TextField

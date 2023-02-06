@@ -27,9 +27,6 @@ function SkillInput(props) {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.header}>
-        <b>{props.attributeName}</b>
-      </div>
       <div className={styles.skillInput}>
         <div className={styles.marginHolder}>
           <TextField

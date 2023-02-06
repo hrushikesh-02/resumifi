@@ -7,7 +7,6 @@ const InputElement = (props) => {
   const [isTouched, setIsTouched] = useState(false);
   return (
     <div className={styles.inputElement}>
-      <div className={styles.attributeName}>{props.attributeName}</div>
       <div className={styles.attributeInput}>
         <TextField
           id="outlined-basic"
@@ -22,7 +21,7 @@ const InputElement = (props) => {
               return { ...prev };
             });
           }}
-          sx={{ width: "90%", zIndex: "0" }}
+          sx={{ width: "90%", zIndex: "0" }}  
           error={isTouched && props.data.trim() === ""}
           helperText={
             props.data.trim() === ""

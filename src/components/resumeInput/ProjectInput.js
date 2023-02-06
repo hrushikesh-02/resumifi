@@ -36,9 +36,6 @@ function ProjectInput(props) {
 
   return (
     <div className={styles.inputElement}>
-      <div className={styles.attributeName}>
-        <b>{props.attributeName}</b>
-      </div>
       <div className={styles.attributeInput}>
         <div className={styles.marginHolder}>
           <TextField
