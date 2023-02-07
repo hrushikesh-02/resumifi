@@ -1,0 +1,25 @@
+.wrapper {
+  /* background-color: red; */
+  margin-top: 1rem;
+  display: flex;
+}
+
+.imageInputWrapper {
+  width: 50%;
+  background-color: lightskyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+.imageOutputWrapper {
+  width: 50%;
+  background-color: lightgreen;
+  background-color: lightskyblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1rem;
+}

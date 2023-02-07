@@ -6,6 +6,7 @@ import ProjectInput from "./ProjectInput";
 import SkillInput from "./SkillInput";
 import React from "react";
 import DropDown from "./DropDown";
+import ImageInput from "./ImageInput";
 
 const Attributeform = (props) => {
   let height = window.innerHeight;
@@ -27,6 +28,10 @@ const Attributeform = (props) => {
           data={props.data["name"]}
           setData={props.setData}
         />
+      </DropDown>
+
+      <DropDown name="Image">
+        <ImageInput />
       </DropDown>
       <DropDown name="E-Mail">
         <InputElement
