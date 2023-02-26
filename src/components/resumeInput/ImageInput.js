@@ -30,12 +30,7 @@ const ImageInput = (props) => {
             accept="image/*"
           />
         </Button> */}
-        <Avatar
-          width={160}
-          height={160}
-          onCrop={onCrop}
-          src={props.data.profileImage}
-        />
+        <Avatar width={160} height={160} onCrop={onCrop} />
       </div>
       <div className={styles.imageOutputWrapper}>
         <div className={styles.imageOutputWrapperHolder}>
