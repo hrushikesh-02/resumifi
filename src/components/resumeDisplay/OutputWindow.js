@@ -1,38 +1,79 @@
 import React from "react";
-import Education from "./Education.js";
 import styles from "./OutputWindow.module.css";
 import { useState, useEffect } from "react";
-import Skills from "./Skills.js";
-import Projects from "./Projects.js";
-import Header from "./Header.js";
 import Template2 from "./templates/template2/Template2.js";
+import Template1 from "./templates/template1/Template1.js";
+
 export default function OutputWindow(props) {
-  const [isProjectEmpty, setProjectEmpty] = useState(false);
-  const [isEducationEmpty, setEducationEmpty] = useState(false);
-  const [isSkillEmpty, setSkillEmpty] = useState(false);
-  const [isHeaderEmpty, setHeaderEmpty] = useState(false);
+  const [emptycheck, setEmptyCheck] = useState({
+    name: false,
+    image: false,
+    email: false,
+    education: false,
+    skills: false,
+    projects: false,
+    socials: false,
+  });
 
   useEffect(() => {
     if (props.data.education.length === 0) {
-      setEducationEmpty(true);
+      setEmptyCheck((prev) => {
+        return { ...prev, education: false };
+      });
     } else {
-      setEducationEmpty(false);
+      setEmptyCheck((prev) => {
+        return { ...prev, education: true };
+      });
     }
+
     if (props.data.projects.length === 0) {
-      setProjectEmpty(true);
+      setEmptyCheck((prev) => {
+        return { ...prev, projects: false };
+      });
     } else {
-      setProjectEmpty(false);
+      setEmptyCheck((prev) => {
+        return { ...prev, projects: true };
+      });
     }
 
     if (props.data.skill.length === 0) {
-      setSkillEmpty(true);
+      setEmptyCheck((prev) => {
+        return { ...prev, skills: false };
+      });
     } else {
-      setSkillEmpty(false);
+      setEmptyCheck((prev) => {
+        return { ...prev, skills: true };
+      });
     }
-    if (props.data.name.length === 0 && props.data.email.length === 0) {
-      setHeaderEmpty(true);
+
+    if (props.data.name.length === 0) {
+      setEmptyCheck((prev) => {
+        return { ...prev, name: false };
+      });
     } else {
-      setHeaderEmpty(false);
+      setEmptyCheck((prev) => {
+        return { ...prev, name: true };
+      });
+    }
+
+    if (props.data.email.length === 0) {
+      setEmptyCheck((prev) => {
+        return { ...prev, email: false };
+      });
+    } else {
+      setEmptyCheck((prev) => {
+        return { ...prev, email: true };
+      });
+    }
+
+    if (props.data.socials.length === 0) {
+      setEmptyCheck((prev) => {
+        return { ...prev, socials: false };
+      });
+    } else {
+      setEmptyCheck((prev) => {
+        return { ...prev, socials: true };
+      });
     }
   }, [props.data]);
 
@@ -49,20 +90,17 @@ export default function OutputWindow(props) {
           height > width ? "1" : props.printScale ? "1" : `${height / 1200}`,
       }}
     >
-      {/* The original dimensions that the react-to-print uses are 800px as width and 1130 as height */}
-
       {props.templateNumber + 1 === 1 && (
-        <div>
-          {!isHeaderEmpty && <Header data={props.data} />}
-          <div className={styles.maincontent}>
-            {!isEducationEmpty && <Education data={props.data} />}
-            {!isProjectEmpty && <Projects data={props.data} />}
-            {!isSkillEmpty && <Skills data={props.data} />}
-          </div>
-        </div>
+        <Template1 data={props.data} emptycheck={emptycheck} />
       )}
 
-      {props.templateNumber + 1 === 2 && <Template2 data={props.data} />}
+      {props.templateNumber + 1 === 2 && (
+        <Template2 data={props.data} emptycheck={emptycheck} />
+      )}
     </div>
   );
 }
+
+//
+//  The original dimensions that the react-to-print uses are 800px as width and 1130 as height
+//

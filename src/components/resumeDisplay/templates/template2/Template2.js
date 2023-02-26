@@ -2,11 +2,10 @@ import React from "react";
 import styles from "./Template2.module.css";
 function Template2(props) {
   return (
-    <>
-      <div className={styles.wrapper}>
-        {/* style={{ color: `${props.data.color}` }} */}
-        <div className={styles.leftWrapper}>
-          <div className={styles.header}>{props.data.name}</div>
+    <div className={styles.wrapper}>
+      <div className={styles.leftWrapper}>
+        <div className={styles.header}>{props.data.name}</div>
+        {props.emptycheck.education && (
           <div className={styles.blobLHS}>
             <div className={styles.outputList} style={{ width: "100%" }}>
               <div
@@ -47,6 +46,8 @@ function Template2(props) {
               })}
             </div>
           </div>
+        )}
+        {props.emptycheck.projects && (
           <div className={styles.blobLHS}>
             <div className={styles.outputList}>
               <div
@@ -91,9 +92,11 @@ function Template2(props) {
               })}
             </div>
           </div>
-        </div>
+        )}
+      </div>
 
-        <div className={styles.rightWrapper}>
+      <div className={styles.rightWrapper}>
+        {props.emptycheck.skills && (
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Skills</div>
             <div className={styles.outputList}>
@@ -106,7 +109,9 @@ function Template2(props) {
               })}
             </div>
           </div>
+        )}
 
+        {props.emptycheck.socials && (
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Links</div>
             <div className={styles.outputList}>
@@ -124,10 +129,10 @@ function Template2(props) {
               </a>
             </div>
           </div>
-          <div className={styles.blobRHS}></div>
-        </div>
+        )}
+        {/* <div className={styles.blobRHS}></div> */}
       </div>
-    </>
+    </div>
   );
 }
 

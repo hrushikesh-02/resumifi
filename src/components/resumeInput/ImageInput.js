@@ -1,13 +1,12 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import styles from "./ImageInput.module.css";
-import Button from "@mui/material/Button";
 import Avatar from "react-avatar-edit";
 const ImageInput = (props) => {
-  const handleImageUpload = (e) => {
-    props.setData((prev) => {
-      return { ...prev, profileImage: URL.createObjectURL(e.target.files[0]) };
-    });
-  };
+  // const handleImageUpload = (e) => {
+  //   props.setData((prev) => {
+  //     return { ...prev, profileImage: URL.createObjectURL(e.target.files[0]) };
+  //   });
+  // };
 
   const onCrop = (preview) => {
     props.setData((prev) => {

@@ -1,9 +1,6 @@
 .wrapper {
-  /* width: 100%;
-  background-color: red;
-  height: 100%; */
   display: flex;
-  min-width: 800px;
+  width: 800px;
   height: 1130px;
   overflow-y: hidden;
 }
