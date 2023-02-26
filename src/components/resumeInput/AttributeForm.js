@@ -31,8 +31,9 @@ const Attributeform = (props) => {
       </DropDown>
 
       <DropDown name="Image">
-        <ImageInput />
+        <ImageInput data={props.data} setData={props.setData} />
       </DropDown>
+
       <DropDown name="E-Mail">
         <InputElement
           key={"email"}

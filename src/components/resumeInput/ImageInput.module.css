@@ -6,7 +6,7 @@
 
 .imageInputWrapper {
   width: 50%;
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,11 +15,17 @@
 
 .imageOutputWrapper {
   width: 50%;
-  background-color: lightgreen;
-  background-color: lightskyblue;
-
+  height: 100%;
+  /* background-color: lightgreen; */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding-block: 1rem;
+}
+
+.imageOutputWrapperHolder {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5px;
+  /* border: 1px dashed grey; */
 }

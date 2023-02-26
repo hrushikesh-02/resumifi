@@ -8,11 +8,8 @@ import React, { useState, useRef } from "react";
 function App() {
   const childRef = useRef(null);
 
-  // useEffect(() => {
-  //   console.log(childRef.current);
-  // }, []);
-
   const [data, setData] = useState({
+    profileImage: null,
     name: "Your Name",
     email: "abc@email.com",
     education: [
