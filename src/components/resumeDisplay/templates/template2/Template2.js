@@ -100,7 +100,7 @@ function Template2(props) {
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Skills</div>
             <div className={styles.outputList}>
-              {props.data.skill.map((ele, ind) => {
+              {props.data.skills.map((ele, ind) => {
                 return (
                   <div key={ind} className={styles.outputListElement}>
                     {ele}

@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   /* align-items: center; */
+  background-color: rgb(237, 230, 246);
 }
 
 @media (prefers-reduced-motion: no-preference) {

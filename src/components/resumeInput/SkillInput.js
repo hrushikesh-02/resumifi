@@ -4,7 +4,8 @@ import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import Chip from "@mui/material/Chip";
-function SkillInput(props) {
+
+function SkillsInput(props) {
   let attributeName = props.attributeName;
   const [tempObj, setTempObj] = useState("");
   const [isTouched, setIsTouched] = useState(false);
@@ -14,7 +15,7 @@ function SkillInput(props) {
       return;
     } else {
       props.setData((prev) => {
-        return { ...prev, skill: [...prev[attributeName]].concat(tempObj) };
+        return { ...prev, skills: [...prev[attributeName]].concat(tempObj) };
       });
 
       setTempObj(() => {
@@ -31,7 +32,7 @@ function SkillInput(props) {
         <div className={styles.marginHolder}>
           <TextField
             id="outlined-basic"
-            label="Skill"
+            label="Skills"
             variant="outlined"
             onChange={(e) => {
               setTempObj(e.target.value);
@@ -59,7 +60,7 @@ function SkillInput(props) {
       </div>
 
       <div className={styles.chipContainer}>
-        {props.data.skill.map((ele, ind) => {
+        {props.data.skills.map((ele, ind) => {
           return (
             <div key={ind} className={styles.chipMarginHolder}>
               <Chip
@@ -68,7 +69,7 @@ function SkillInput(props) {
                   props.setData((prev) => {
                     return {
                       ...prev,
-                      skill: props.data.skill.filter(
+                      skills: props.data.skills.filter(
                         (currele) => ele !== currele
                       ),
                     };
@@ -89,4 +90,4 @@ function SkillInput(props) {
   );
 }
 
-export default SkillInput;
+export default SkillsInput;

@@ -7,6 +7,7 @@ import SkillInput from "./SkillInput";
 import React from "react";
 import DropDown from "./DropDown";
 import ImageInput from "./ImageInput";
+import AchievementInput from "./AchievementInput";
 
 const Attributeform = (props) => {
   let height = window.innerHeight;
@@ -54,8 +55,8 @@ const Attributeform = (props) => {
 
       <DropDown name="Skills">
         <SkillInput
-          key={"skill"}
-          attributeName={"skill"}
+          key={"skills"}
+          attributeName={"skills"}
           data={props.data}
           setData={props.setData}
         />
@@ -64,6 +65,14 @@ const Attributeform = (props) => {
         <ProjectInput
           key={"project"}
           attributeName={"projects"}
+          data={props.data}
+          setData={props.setData}
+        />
+      </DropDown>
+      <DropDown name="Achievements">
+        <AchievementInput
+          key={"achievements"}
+          attributeName={"achievements"}
           data={props.data}
           setData={props.setData}
         />

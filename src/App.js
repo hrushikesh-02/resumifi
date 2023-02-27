@@ -16,7 +16,7 @@ function App() {
       { name: "name1", description: "description1", score: "90%" },
       { name: "name2", description: "description2", score: "95%" },
     ],
-    skill: ["cpp", "java", "python"],
+    skills: ["cpp", "java", "python"],
     socials: [
       { name: "github", link: "https://github.com/" },
       { name: "codechef", link: "https://www.codechef.com/learn" },
@@ -34,7 +34,10 @@ function App() {
         description: "A simple vanilla js project to display the weather ",
       },
     ],
-    achievements: ["4* on codechef", "leetcoder"],
+    achievements: [
+      { name: "temp", description: "the description" },
+      { name: "temasdp", description: "the dessdcription" },
+    ],
     color: "#000000",
     color2: "#000000",
   });

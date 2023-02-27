@@ -36,7 +36,7 @@ export default function OutputWindow(props) {
       });
     }
 
-    if (props.data.skill.length === 0) {
+    if (props.data.skills.length === 0) {
       setEmptyCheck((prev) => {
         return { ...prev, skills: false };
       });
