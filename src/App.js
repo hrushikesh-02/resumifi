@@ -12,6 +12,9 @@ function App() {
     profileImage: null,
     name: "Your Name",
     email: "abc@email.com",
+    linkedin: "https://www.linkedin.com/in/yourLinkedinhere/",
+    summary:
+      "ReactJS dev with experience in building responsive web applications.",
     education: [
       { name: "name1", description: "description1", score: "90%" },
       { name: "name2", description: "description2", score: "95%" },

@@ -9,6 +9,7 @@ import React from "react";
 import DropDown from "./DropDown";
 import ImageInput from "./ImageInput";
 import AchievementInput from "./AchievementInput";
+import MySummaryInput from "./MySummaryInput";
 
 const Attributeform = (props) => {
   let height = window.innerHeight;
@@ -43,6 +44,22 @@ const Attributeform = (props) => {
           data={props.data["email"]}
           setData={props.setData}
           // sx={true ? { marginTop: "10rem" } : {}}
+        />
+      </DropDown>
+      <DropDown name="Linkedin">
+        <InputElement
+          key={"linkedin"}
+          attributeName={"linkedin"}
+          data={props.data["linkedin"]}
+          setData={props.setData}
+        />
+      </DropDown>
+      <DropDown name="My Summary">
+        <MySummaryInput
+          key={"summary"}
+          attributeName={"summary"}
+          data={props.data["summary"]}
+          setData={props.setData}
         />
       </DropDown>
       <DropDown name="Education">

@@ -3,13 +3,11 @@
   display: flex;
   width: 40%;
   max-height: 100vh;
-  border-radius: 0px 10px 10px 0px;
   overflow-y: scroll;
   border-right: 1px solid rgb(239, 239, 239);
   flex-direction: column;
-  /* z-index: 10; */
-  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 5px 20px 1px; */
-  /* can remove shadow in future */
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.56) -15px 0px 15px 7px;
 }
 
 .formContainer::-webkit-scrollbar {
@@ -32,5 +30,6 @@
     margin-bottom: 6rem;
     z-index: 100;
     border-radius: 0;
+    box-shadow: none;
   }
 }
