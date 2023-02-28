@@ -12,7 +12,7 @@ const InputElement = (props) => {
           id="outlined-basic"
           label={attributeName}
           variant="outlined"
-          type={props.attributeType}
+          type={props.attributeType}  
           value={props.data}
           onChange={(e) => {
             setIsTouched(true);

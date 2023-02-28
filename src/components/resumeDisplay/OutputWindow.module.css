@@ -4,7 +4,7 @@
   /* background-color: pink; */
   display: flex;
   flex-direction: column;
-  min-width: 800px;
+  width: 800px;
   height: 1130px;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 0px 10px 1px;
   overflow-y: hidden;

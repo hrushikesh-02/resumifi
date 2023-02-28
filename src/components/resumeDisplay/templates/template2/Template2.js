@@ -5,7 +5,7 @@ function Template2(props) {
     <div className={styles.wrapper}>
       <div className={styles.leftWrapper}>
         <div className={styles.header}>{props.data.name}</div>
-        {props.emptycheck.education && (
+        {props.emptyCheck.education && (
           <div className={styles.blobLHS}>
             <div className={styles.outputList} style={{ width: "100%" }}>
               <div
@@ -47,7 +47,8 @@ function Template2(props) {
             </div>
           </div>
         )}
-        {props.emptycheck.projects && (
+
+        {props.emptyCheck.projects && (
           <div className={styles.blobLHS}>
             <div className={styles.outputList}>
               <div
@@ -96,7 +97,7 @@ function Template2(props) {
       </div>
 
       <div className={styles.rightWrapper}>
-        {props.emptycheck.skills && (
+        {props.emptyCheck.skills && (
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Skills</div>
             <div className={styles.outputList}>
@@ -111,7 +112,7 @@ function Template2(props) {
           </div>
         )}
 
-        {props.emptycheck.socials && (
+        {props.emptyCheck.socials && (
           <div className={styles.blobRHS}>
             <div className={styles.attributeTitle}>Links</div>
             <div className={styles.outputList}>

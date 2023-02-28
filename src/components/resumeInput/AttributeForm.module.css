@@ -10,6 +10,12 @@
   box-shadow: rgba(0, 0, 0, 0.56) -15px 0px 15px 7px;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .formContainer::-webkit-scrollbar {
   display: none;
 }

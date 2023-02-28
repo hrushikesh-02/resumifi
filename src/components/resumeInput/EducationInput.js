@@ -44,7 +44,7 @@ function EducationInput(props) {
         <div className={styles.marginHolder}>
           <TextField
             id="outlined-basic"
-            label="Education"
+            label="Name"
             variant="outlined"
             type={props.attributeNumber}
             value={tempObj.name}

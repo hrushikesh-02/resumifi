@@ -12,7 +12,6 @@ const ImageInput = (props) => {
     props.setData((prev) => {
       return { ...prev, profileImage: preview };
     });
-    console.log(props.data);
   };
 
   return (

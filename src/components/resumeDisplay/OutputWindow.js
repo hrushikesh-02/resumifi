@@ -5,7 +5,7 @@ import Template2 from "./templates/template2/Template2.js";
 import Template1 from "./templates/template1/Template1.js";
 
 export default function OutputWindow(props) {
-  const [emptycheck, setEmptyCheck] = useState({
+  const [emptyCheck, setEmptyCheck] = useState({
     name: false,
     image: false,
     email: false,
@@ -113,11 +113,11 @@ export default function OutputWindow(props) {
       }}
     >
       {props.templateNumber + 1 === 1 && (
-        <Template1 data={props.data} emptycheck={emptycheck} />
+        <Template1 data={props.data} emptyCheck={emptyCheck} />
       )}
 
       {props.templateNumber + 1 === 2 && (
-        <Template2 data={props.data} emptycheck={emptycheck} />
+        <Template2 data={props.data} emptyCheck={emptyCheck} />
       )}
     </div>
   );
