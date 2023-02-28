@@ -12,6 +12,7 @@ function App() {
     profileImage: null,
     name: "Your Name",
     email: "abc@email.com",
+    contact: "12334",
     linkedin: "https://www.linkedin.com/in/yourLinkedinhere/",
     summary:
       "ReactJS dev with experience in building responsive web applications.",

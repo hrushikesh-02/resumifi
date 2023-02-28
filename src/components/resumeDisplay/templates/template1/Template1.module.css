@@ -1,11 +1,47 @@
 .mainContainer {
-  width: 800px;
-  height: 1130px;
-  background-color: yellowgreen;
+  height: 100%;
+  padding: 1rem;
 }
 
-.holder {
-  background-color: rebeccapurple;
-  width: 10%;
-  height: 25%;
+.upperSection {
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+
+.upperLeftSection {
+  width: 80%;
+  height: 100%;
+  /* background-color: lightgoldenrodyellow; */
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  text-align: left;
+}
+
+.sub {
+  font-size: 1rem;
+}
+
+.upperRightSection {
+  width: 50%;
+  height: 100%;
+  background-color: lightcoral;
+}
+
+.lowerSection {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+.lowerLeftSection {
+  width: 50%;
+  height: 100%;
+  background-color: lightseagreen;
+}
+.lowerRightSection {
+  width: 50%;
+  height: 100%;
+  background-color: lightgreen;
 }

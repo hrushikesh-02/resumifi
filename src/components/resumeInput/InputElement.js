@@ -12,7 +12,7 @@ const InputElement = (props) => {
           id="outlined-basic"
           label={attributeName}
           variant="outlined"
-          type={props.attributeNumber}
+          type={props.attributeType}
           value={props.data}
           onChange={(e) => {
             setIsTouched(true);
@@ -21,7 +21,7 @@ const InputElement = (props) => {
               return { ...prev };
             });
           }}
-          sx={{ width: "90%", zIndex: "0" }}  
+          sx={{ width: "90%", zIndex: "0" }}
           error={isTouched && props.data.trim() === ""}
           helperText={
             props.data.trim() === ""
