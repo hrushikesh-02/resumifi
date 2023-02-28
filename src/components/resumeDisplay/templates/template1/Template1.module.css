@@ -1,0 +1,11 @@
+.mainContainer {
+  width: 800px;
+  height: 1130px;
+  background-color: yellowgreen;
+}
+
+.holder {
+  background-color: rebeccapurple;
+  width: 10%;
+  height: 25%;
+}

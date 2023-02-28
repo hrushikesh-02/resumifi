@@ -13,9 +13,31 @@ export default function OutputWindow(props) {
     skills: false,
     projects: false,
     socials: false,
+    achievements: false,
+    languages: false,
   });
 
   useEffect(() => {
+    if (props.data.languages.length === 0) {
+      setEmptyCheck((prev) => {
+        return { ...prev, languages: false };
+      });
+    } else {
+      setEmptyCheck((prev) => {
+        return { ...prev, languages: true };
+      });
+    }
+
+    if (props.data.achievements.length === 0) {
+      setEmptyCheck((prev) => {
+        return { ...prev, achievements: false };
+      });
+    } else {
+      setEmptyCheck((prev) => {
+        return { ...prev, achievements: true };
+      });
+    }
+
     if (props.data.education.length === 0) {
       setEmptyCheck((prev) => {
         return { ...prev, education: false };

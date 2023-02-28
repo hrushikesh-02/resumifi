@@ -17,6 +17,7 @@ function App() {
       { name: "name2", description: "description2", score: "95%" },
     ],
     skills: ["cpp", "java", "python"],
+    languages: ["english", "tamil"],
     socials: [
       { name: "github", link: "https://github.com/" },
       { name: "codechef", link: "https://www.codechef.com/learn" },
@@ -44,7 +45,7 @@ function App() {
 
   const [preview, setPreview] = useState(false);
   const [printScale, setPrintScale] = useState(false);
-  const [templateNumber, setTemplateNumber] = useState(1);
+  const [templateNumber, setTemplateNumber] = useState(0);
 
   let width = window.innerWidth;
 

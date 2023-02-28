@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./Template1.module.css";
 
-function template1() {
-  return <div></div>;
-}
+const Template1 = (props) => {
+  return <div className={styles.mainContainer}></div>;
+};
 
-export default template1;
+export default Template1;

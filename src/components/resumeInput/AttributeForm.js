@@ -4,6 +4,7 @@ import EducationInput from "./EducationInput";
 import InputElement from "./InputElement";
 import ProjectInput from "./ProjectInput";
 import SkillInput from "./SkillInput";
+import LanguagesInput from "./LanguagesInput";
 import React from "react";
 import DropDown from "./DropDown";
 import ImageInput from "./ImageInput";
@@ -57,6 +58,14 @@ const Attributeform = (props) => {
         <SkillInput
           key={"skills"}
           attributeName={"skills"}
+          data={props.data}
+          setData={props.setData}
+        />
+      </DropDown>
+      <DropDown name="Languages">
+        <LanguagesInput
+          key={"languages"}
+          attributeName={"languages"}
           data={props.data}
           setData={props.setData}
         />
