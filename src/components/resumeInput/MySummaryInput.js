@@ -12,7 +12,7 @@ const MySummaryInput = (props) => {
           id="outlined-multiline-static"
           multiline
           rows={4}
-          defaultValue="Default Value"
+          // defaultValue="Default Value"
           label={attributeName}
           type={props.attributeNumber}
           value={props.data}

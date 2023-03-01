@@ -59,6 +59,8 @@ function ProjectInput(props) {
         </div>
         <div className={styles.marginHolder}>
           <TextField
+            multiline
+            rows={4}
             id="outlined-basic"
             label="Description"
             variant="outlined"

@@ -46,7 +46,7 @@
 }
 
 .lowerLeftSection {
-  width: 55%;
+  width: 52%;
   height: 100%;
   /* background-color: lightblue; */
 }
@@ -85,4 +85,13 @@
   word-wrap: break-word;
   display: flex;
   justify-content: flex-start;
+}
+
+.skillsOutput {
+  display: flex;
+  height: auto;
+  width: 100%;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
