@@ -18,6 +18,7 @@ function App() {
         name: "Your Name",
         email: "abc@email.com",
         contact: "12334",
+        role: "developer",
         linkedin: "https://www.linkedin.com/in/yourLinkedinhere/",
         summary:
           "ReactJS dev with experience in building responsive web applications.",
@@ -65,7 +66,7 @@ function App() {
 
   const [preview, setPreview] = useState(false);
   const [printScale, setPrintScale] = useState(false);
-  const [templateNumber, setTemplateNumber] = useState(0);
+  const [templateNumber, setTemplateNumber] = useState(1);
 
   let width = window.innerWidth;
 

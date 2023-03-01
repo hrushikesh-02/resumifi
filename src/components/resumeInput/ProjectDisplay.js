@@ -34,7 +34,11 @@ function ProjectDisplay(props) {
           />
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List
+            component="div"
+            disablePadding
+            className={styles.dropDownParent}
+          >
             <div className={styles.educationDisplayData}>
               Name: {props.data.name}
             </div>

@@ -32,6 +32,16 @@ const Attributeform = (props) => {
           setData={props.setData}
         />
       </DropDown>
+
+      <DropDown name="Role">
+        <InputElement
+          key={"role"}
+          attributeName={"role"}
+          data={props.data["role"]}
+          setData={props.setData}
+        />
+      </DropDown>
+
       <DropDown name="Contact Number">
         <InputElement
           key={"contact"}

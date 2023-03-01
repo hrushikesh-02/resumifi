@@ -9,4 +9,13 @@
 .educationDisplayData {
   height: 2rem;
   width: 100%;
+  padding-left: 1rem;
 }
+
+.dropDownParent {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+

@@ -1,93 +1,72 @@
 import React from "react";
 import styles from "./Template2.module.css";
+import Chip from "@mui/material/Chip";
+
 function Template2(props) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.leftWrapper}>
-        <div className={styles.header}>{props.data.name}</div>
-        {props.emptyCheck.education && (
-          <div className={styles.blobLHS}>
-            <div className={styles.outputList} style={{ width: "100%" }}>
-              <div
-                className={styles.outputListElement}
-                style={{
-                  borderBottom: "1px solid ",
-                  color: "black",
-                  display: "flex",
-                  width: "100%",
-                  marginBottom: "1rem",
-                }}
-              >
-                <b>EDUCATION</b>
-              </div>
-              {props.data.education.map((ele, ind) => {
-                return (
-                  <div key={ind} className={styles.outputListWrapper}>
-                    <div
-                      className={styles.outputListElement}
-                      style={{ display: "flex", color: "black" }}
-                    >
-                      {ele.name}
-                      <div
-                        className={styles.outputListElement}
-                        style={{ marginLeft: "1rem", color: "black" }}
-                      >
-                        {ele.score}
-                      </div>
-                    </div>
-                    <div
-                      className={styles.outputListElement}
-                      style={{ color: "black" }}
-                    >
-                      {ele.description}
-                    </div>
-                  </div>
-                );
-              })}
+    <div className={styles.mainContainer}>
+      <div className={styles.leftContainer}>
+        <div className={styles.nameSection}>
+          <div className={styles.name}>{props.data.name}</div>
+          <div className={styles.sub}>{props.data.role}</div>
+          <div className={styles.contactSection}>
+            <div className={styles.contactSectionChild}>
+              {props.data.contact}
             </div>
+
+            <a
+              href={`mailto:${props.data.email}`}
+              className={styles.contactSectionChild}
+            >
+              {props.data.email}
+            </a>
+
+            <a
+              href={props.data.linkedin}
+              className={styles.contactSectionChild}
+            >
+              Linkedin
+            </a>
+          </div>
+        </div>
+
+        {/* EDUCATION SECTION */}
+        {props.emptyCheck.education && (
+          <div className={styles.section}>
+            <div className={styles.lowerSectionTitle}>Education</div>
+            {props.data.education.map((ele, ind) => {
+              return (
+                <div
+                  key={ele.name}
+                  className={styles.container}
+                  style={{ marginTop: "1rem" }}
+                >
+                  <div className={styles.header}>{ele.name}</div>
+                  <div className={styles.description}>
+                    {ele.description} - {ele.score}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
 
+        {/* PROJECT SECTION */}
         {props.emptyCheck.projects && (
-          <div className={styles.blobLHS}>
-            <div className={styles.outputList}>
-              <div
-                className={styles.outputListElement}
-                style={{
-                  borderBottom: "1px solid ",
-                  color: "black",
-                  display: "flex",
-                  width: "100%",
-                  marginBottom: "1rem",
-                }}
-              >
-                <b>PROJECTS</b>
-              </div>
+          <div className={styles.section}>
+            <div className={styles.lowerSectionTitle}>Projects</div>
+            <div style={{ margin: 0 }}>
               {props.data.projects.map((ele, ind) => {
                 return (
-                  <div key={ind} className={styles.outputListWrapper}>
-                    <div
-                      className={styles.outputListElement}
-                      style={{
-                        color: "black",
-                        display: "flex",
-                        fontWeight: "500",
-                      }}
-                    >
-                      {ele.name}
+                  <div
+                    key={ele.name}
+                    className={styles.container}
+                    style={{ marginTop: "1rem" }}
+                  >
+                    <div className={styles.header}>
+                      {ele.name}&nbsp;<a href={ele.link}>link</a>
                     </div>
-                    <div
-                      className={styles.outputListElement}
-                      style={{ color: "black" }}
-                    >
-                      {ele.description}
-                    </div>
-                    <div
-                      className={styles.outputListElement}
-                      style={{ color: "black" }}
-                    >
-                      {ele.link}
-                    </div>
+                    <div className={styles.description}>{ele.description}</div>
                   </div>
                 );
               })}
@@ -95,16 +74,44 @@ function Template2(props) {
           </div>
         )}
       </div>
+      <div
+        className={styles.rightContainer}
+        style={{ backgroundColor: props.data.color }}
+      >
+        <div className={styles.imageSection}>
+          <img alt="Null" src={props.data.profileImage} width="150px" />
+        </div>
+        <div className={styles.section}></div>
 
-      <div className={styles.rightWrapper}>
+        {/* SKILLS SECTION */}
         {props.emptyCheck.skills && (
-          <div className={styles.blobRHS}>
-            <div className={styles.attributeTitle}>Skills</div>
-            <div className={styles.outputList}>
+          <div className={styles.section}>
+            <div
+              className={styles.lowerSectionTitle}
+              style={{
+                color: props.data.color2,
+                borderBottom: `1px solid ${props.data.color2}`,
+              }}
+            >
+              Skills
+            </div>
+            <div className={styles.skillsOutput}>
               {props.data.skills.map((ele, ind) => {
                 return (
-                  <div key={ind} className={styles.outputListElement}>
-                    {ele}
+                  <div key={ele} className={styles.container}>
+                    <div
+                      className={styles.header}
+                      style={{ fontSize: "1.3rem", color: props.data.color2 }}
+                    >
+                      <Chip
+                        label={ele}
+                        variant="outlined"
+                        sx={{
+                          color: props.data.color2,
+                          border: `1px solid ${props.data.color2}`,
+                        }}
+                      />
+                    </div>
                   </div>
                 );
               })}
@@ -112,26 +119,93 @@ function Template2(props) {
           </div>
         )}
 
+        {/* SOCIAL LINKS */}
         {props.emptyCheck.socials && (
-          <div className={styles.blobRHS}>
-            <div className={styles.attributeTitle}>Links</div>
-            <div className={styles.outputList}>
-              {props.data.socials.map((ele, ind) => {
-                return (
-                  <div key={ind}>
-                    <a className={styles.outputListElement} href={ele.link}>
-                      {ele.name}
-                    </a>
-                  </div>
-                );
-              })}
-              <a className={styles.outputListElement} href={props.email}>
-                {props.email}
-              </a>
+          <div className={styles.section}>
+            <div
+              className={styles.lowerSectionTitle}
+              style={{
+                color: props.data.color2,
+                borderBottom: `1px solid ${props.data.color2}`,
+              }}
+            >
+              Social Links
             </div>
+            {props.data.socials.map((ele, ind) => {
+              return (
+                <div key={ele.name} className={styles.container}>
+                  <a
+                    href={ele.link}
+                    className={styles.header}
+                    style={{ fontSize: "1.3rem" }}
+                  >
+                    {ele.name}
+                  </a>
+                </div>
+              );
+            })}
           </div>
         )}
-        {/* <div className={styles.blobRHS}></div> */}
+
+        {/* LANGUAGES */}
+        {props.emptyCheck.languages && (
+          <div className={styles.section}>
+            <div
+              className={styles.lowerSectionTitle}
+              style={{
+                color: props.data.color2,
+                borderBottom: `1px solid ${props.data.color2}`,
+              }}
+            >
+              Languages
+            </div>
+            {props.data.languages.map((ele, ind) => {
+              return (
+                <div key={ele} className={styles.container}>
+                  <div
+                    className={styles.header}
+                    style={{ color: props.data.color2, fontSize: "1.3rem" }}
+                  >
+                    {ele}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* ACHIEVEMENTS */}
+        {props.emptyCheck.achievements && (
+          <div className={styles.section}>
+            <div
+              className={styles.lowerSectionTitle}
+              style={{
+                color: props.data.color2,
+                borderBottom: `1px solid ${props.data.color2}`,
+              }}
+            >
+              Achievements
+            </div>
+            {props.data.achievements.map((ele, ind) => {
+              return (
+                <div key={ele} className={styles.container}>
+                  <div
+                    className={styles.header}
+                    style={{ color: props.data.color2, fontSize: "1.3rem" }}
+                  >
+                    {ele.name}
+                  </div>
+                  <div
+                    className={styles.description}
+                    style={{ color: props.data.color2 }}
+                  >
+                    {ele.description}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

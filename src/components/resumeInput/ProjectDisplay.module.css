@@ -6,6 +6,15 @@
 }
 
 .educationDisplayData {
-  height: 2rem;
+  text-align: left;
   width: 100%;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.dropDownParent {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }

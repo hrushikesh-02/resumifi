@@ -16,6 +16,7 @@ function Customizer(props) {
   const [showColorPicker2, setShowColorPicker2] = useState(false);
 
   const handlePrint = useReactToPrint({
+    documentTitle: `${props.data.name}_resume`,
     content: () => props.forwardedRef.current,
   });
 

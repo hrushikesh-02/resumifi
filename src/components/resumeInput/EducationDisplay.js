@@ -33,15 +33,19 @@ function EducationDisplay(props) {
           />
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List
+            component="div"
+            disablePadding
+            className={styles.dropDownParent}
+          >
             <div className={styles.educationDisplayData}>
               Name: {props.data.name}
             </div>
             <div className={styles.educationDisplayData}>
-              {props.data.description}
+              Description: {props.data.description}
             </div>
             <div className={styles.educationDisplayData}>
-              {props.data.score}
+              Score: {props.data.score}
             </div>
           </List>
         </Collapse>
