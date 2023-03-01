@@ -153,7 +153,7 @@ const Template1 = (props) => {
                 className={styles.lowerSectionTitle}
                 style={{ color: props.data.color }}
               >
-                Languages{" "}
+                Languages
               </div>
               {props.data.languages.map((ele, ind) => {
                 return (
@@ -164,6 +164,31 @@ const Template1 = (props) => {
                     >
                       {ele}
                     </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* ACHIEVEMENTS */}
+          {props.emptyCheck.achievements && (
+            <div className={styles.section}>
+              <div
+                className={styles.lowerSectionTitle}
+                style={{ color: props.data.color }}
+              >
+                Achievements
+              </div>
+              {props.data.achievements.map((ele, ind) => {
+                return (
+                  <div key={ele} className={styles.container}>
+                    <div
+                      className={styles.header}
+                      style={{ fontSize: "1.3rem" }}
+                    >
+                      {ele.name}
+                    </div>
+                    <div className={styles.description}>{ele.description}</div>
                   </div>
                 );
               })}
