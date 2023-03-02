@@ -136,7 +136,10 @@ const Template1 = (props) => {
                     <a
                       href={ele.link}
                       className={styles.header}
-                      style={{ fontSize: "1.3rem" }}
+                      style={{
+                        fontSize: "1.3rem",
+                        color: props.data.color2,
+                      }}
                     >
                       {ele.name}
                     </a>

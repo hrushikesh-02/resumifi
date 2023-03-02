@@ -9,10 +9,22 @@ import { ChromePicker } from "react-color";
 import { useReactToPrint } from "react-to-print";
 
 function Customizer(props) {
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState(() => {
+    if (props.data.color) {
+      return props.data.color;
+    } else {
+      return "#000000";
+    }
+  });
   const [showColorPicker, setShowColorPicker] = useState(false);
 
-  const [color2, setColor2] = useState("#000000");
+  const [color2, setColor2] = useState(() => {
+    if (props.data.color) {
+      return props.data.color2;
+    } else {
+      return "#000000";
+    }
+  });
   const [showColorPicker2, setShowColorPicker2] = useState(false);
 
   const handlePrint = useReactToPrint({
