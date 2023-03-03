@@ -74,14 +74,15 @@ function Template2(props) {
           </div>
         )}
       </div>
+
       <div
         className={styles.rightContainer}
         style={{ backgroundColor: props.data.color }}
       >
+        {/* IMAGE SECTION */}
         <div className={styles.imageSection}>
           <img alt="Null" src={props.data.profileImage} width="150px" />
         </div>
-        <div className={styles.section}></div>
 
         {/* SKILLS SECTION */}
         {props.emptyCheck.skills && (

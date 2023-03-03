@@ -66,7 +66,7 @@ function App() {
 
   const [preview, setPreview] = useState(false);
   const [printScale, setPrintScale] = useState(false);
-  const [templateNumber, setTemplateNumber] = useState(0);
+  const [templateNumber, setTemplateNumber] = useState(2);
 
   let width = window.innerWidth;
 

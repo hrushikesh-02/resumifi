@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./OutputWindow.module.css";
 import { useState, useEffect } from "react";
-import Template2 from "./templates/template2/Template2.js";
 import Template1 from "./templates/template1/Template1.js";
+import Template2 from "./templates/template2/Template2.js";
+import Template3 from "./templates/template3/Template3.js";
 
 export default function OutputWindow(props) {
   const [emptyCheck, setEmptyCheck] = useState({
@@ -15,9 +16,20 @@ export default function OutputWindow(props) {
     socials: false,
     achievements: false,
     languages: false,
+    summary: false,
   });
 
   useEffect(() => {
+    if (props.data.summary.length === 0) {
+      setEmptyCheck((prev) => {
+        return { ...prev, summary: false };
+      });
+    } else {
+      setEmptyCheck((prev) => {
+        return { ...prev, summary: true };
+      });
+    }
+
     if (props.data.languages.length === 0) {
       setEmptyCheck((prev) => {
         return { ...prev, languages: false };
@@ -118,6 +130,10 @@ export default function OutputWindow(props) {
 
       {props.templateNumber + 1 === 2 && (
         <Template2 data={props.data} emptyCheck={emptyCheck} />
+      )}
+
+      {props.templateNumber + 1 === 3 && (
+        <Template3 data={props.data} emptyCheck={emptyCheck} />
       )}
     </div>
   );

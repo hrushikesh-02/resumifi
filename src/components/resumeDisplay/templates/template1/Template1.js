@@ -138,7 +138,6 @@ const Template1 = (props) => {
                       className={styles.header}
                       style={{
                         fontSize: "1.3rem",
-                        color: props.data.color2,
                       }}
                     >
                       {ele.name}

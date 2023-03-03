@@ -81,6 +81,31 @@ function Customizer(props) {
           </Fab>
         </Tooltip>
       </div>
+
+      {/* TESTING */}
+
+      {/* <div className={styles.customizerComponent}>
+        <Tooltip
+          title="Template"
+          placement="left"
+          disableFocusListener
+          disableTouchListener
+        >
+          <Fab
+            size="small"
+            color="secondary"
+            aria-label="add"
+            onClick={async () => {
+              await props.setTemplateNumber((curr) => (curr + 1) % 3);
+            }}
+          >
+            {props.templateNumber + 1}
+          </Fab>
+        </Tooltip>
+      </div> */}
+
+      {/* Testing */}
+
       <div className={styles.customizerComponent}>
         <Tooltip
           title="Color-1"
