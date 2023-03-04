@@ -114,6 +114,7 @@
 
 @media only screen and (max-width: 600px) {
   .mainContainer {
-    scale: 0.5;
+    min-width: 800px;
+    min-height: 1130px;
   }
 }

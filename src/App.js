@@ -69,6 +69,7 @@ function App() {
   const [templateNumber, setTemplateNumber] = useState(2);
 
   let width = window.innerWidth;
+  let height = window.innerHeight;
 
   return (
     <>
@@ -78,7 +79,16 @@ function App() {
         )}
         <div
           className="AppOutput"
-          style={{ width: !preview ? (width < 1300 ? "75%" : "60%") : "95%" }}
+          style={{
+            width:
+              width < height
+                ? "100%"
+                : !preview
+                ? width < 1300
+                  ? "75%"
+                  : "60%"
+                : "95%",
+          }}
         >
           <OutputWindow
             printScale={printScale}

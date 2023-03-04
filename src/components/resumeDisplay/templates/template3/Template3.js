@@ -10,7 +10,9 @@ const Template3 = (props) => {
     <div className={styles.mainContainer}>
       <div
         className={styles.bar}
-        style={{ backgroundColor: props.data.color2 }}
+        style={{
+          backgroundColor: props.data.color2,
+        }}
       ></div>
 
       <div className={styles.middle}>

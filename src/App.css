@@ -15,17 +15,13 @@
 
 .AppOutput {
   background-color: rgb(204, 230, 201);
-  background-color: rgb(237, 230, 246);
+  /* background-color: rgb(237, 230, 246); */
   width: 60%;
   max-height: 100vh;
   overflow: hidden;
-  /* overflow-y: auto; */
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  /* color: white; */
   scroll-snap-align: baseline;
   padding-block: 3rem;
 }
@@ -48,11 +44,11 @@
     width: 100%;
   }
   .AppOutput {
+    height: 90%;
     min-width: 100%;
     position: absolute;
     left: 0rem;
     overflow-y: scroll;
-    display: block;
     padding: 0;
     scale: 1;
   }

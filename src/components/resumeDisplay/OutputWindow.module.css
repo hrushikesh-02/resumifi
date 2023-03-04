@@ -32,10 +32,8 @@
 
 @media only screen and (max-width: 600px) {
   .wrapper {
-    min-width: 100%;
-    /* width: 100%;
-    display: flex;
-    overflow-x: scroll;
-    overflow-y: scroll; */
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
   }
 }
