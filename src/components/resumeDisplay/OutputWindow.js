@@ -127,11 +127,9 @@ export default function OutputWindow(props) {
       {props.templateNumber + 1 === 1 && (
         <Template1 data={props.data} emptyCheck={emptyCheck} />
       )}
-
       {props.templateNumber + 1 === 2 && (
         <Template2 data={props.data} emptyCheck={emptyCheck} />
       )}
-
       {props.templateNumber + 1 === 3 && (
         <Template3 data={props.data} emptyCheck={emptyCheck} />
       )}

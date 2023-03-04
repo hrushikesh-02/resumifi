@@ -17,7 +17,7 @@ function App() {
         profileImage: null,
         name: "Your Name",
         email: "abc@email.com",
-        contact: "12334",
+        contact: "123456890",
         role: "developer",
         linkedin: "https://www.linkedin.com/in/yourLinkedinhere/",
         summary:

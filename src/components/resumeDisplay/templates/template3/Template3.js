@@ -46,7 +46,12 @@ const Template3 = (props) => {
             {/* SKILLS SECTION */}
             {props.emptyCheck.skills && (
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>Skills</div>
+                <div
+                  className={styles.sectionTitle}
+                  style={{ color: props.data.color }}
+                >
+                  Skills
+                </div>
                 <div className={styles.skillsOutput}>
                   {props.data.skills.map((ele, ind) => {
                     return (
@@ -69,7 +74,12 @@ const Template3 = (props) => {
             {/* EDUCATION SECTION */}
             {props.emptyCheck.education && (
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>Education</div>
+                <div
+                  className={styles.sectionTitle}
+                  style={{ color: props.data.color }}
+                >
+                  Education
+                </div>
                 {props.data.education.map((ele, ind) => {
                   return (
                     <div
@@ -90,7 +100,12 @@ const Template3 = (props) => {
             {/* SOCIAL LINKS */}
             {props.emptyCheck.socials && (
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>Social Links</div>
+                <div
+                  className={styles.sectionTitle}
+                  style={{ color: props.data.color }}
+                >
+                  Social Links
+                </div>
                 <div className={styles.skillsOutput}>
                   {props.data.socials.map((ele, ind) => {
                     return (
@@ -115,7 +130,12 @@ const Template3 = (props) => {
             {/* LANGUAGES */}
             {props.emptyCheck.languages && (
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>Languages</div>
+                <div
+                  className={styles.sectionTitle}
+                  style={{ color: props.data.color }}
+                >
+                  Languages
+                </div>
                 {props.data.languages.map((ele, ind) => {
                   return (
                     <div key={ele} className={styles.container}>
@@ -130,14 +150,24 @@ const Template3 = (props) => {
           <div className={styles.rightSection}>
             {props.emptyCheck.summary && (
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>Summary</div>
+                <div
+                  className={styles.sectionTitle}
+                  style={{ color: props.data.color }}
+                >
+                  Summary
+                </div>
                 <div className={styles.container}>{props.data.summary}</div>
               </div>
             )}
             {/* PROJECT SECTION */}
             {props.emptyCheck.projects && (
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>Projects</div>
+                <div
+                  className={styles.sectionTitle}
+                  style={{ color: props.data.color }}
+                >
+                  Projects
+                </div>
                 <ul style={{ margin: 0 }}>
                   {props.data.projects.map((ele, ind) => {
                     return (
