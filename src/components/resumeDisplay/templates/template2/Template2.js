@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Template2.module.css";
 import Chip from "@mui/material/Chip";
-
+import tempUserImage from "../../../../assets/usersvg.svg";
 function Template2(props) {
   return (
     <div className={styles.mainContainer}>
@@ -80,9 +80,16 @@ function Template2(props) {
         style={{ backgroundColor: props.data.color }}
       >
         {/* IMAGE SECTION */}
-        <div className={styles.imageSection}>
-          <img alt="Null" src={props.data.profileImage} width="150px" />
-        </div>
+        {props.emptyCheck.profileImage && (
+          <div className={styles.imageSection}>
+            <img alt="Null" src={props.data.profileImage} width="150px" />
+          </div>
+        )}
+        {!props.emptyCheck.profileImage && (
+          <div className={styles.imageSection}>
+            <img alt="Null2" src={tempUserImage} width="150px" />
+          </div>
+        )}
 
         {/* SKILLS SECTION */}
         {props.emptyCheck.skills && (

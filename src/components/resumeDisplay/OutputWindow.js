@@ -8,7 +8,7 @@ import Template3 from "./templates/template3/Template3.js";
 export default function OutputWindow(props) {
   const [emptyCheck, setEmptyCheck] = useState({
     name: false,
-    image: false,
+    profileImage: false,
     email: false,
     education: false,
     skills: false,
@@ -20,6 +20,16 @@ export default function OutputWindow(props) {
   });
 
   useEffect(() => {
+    if (props.data.profileImage === null) {
+      setEmptyCheck((prev) => {
+        return { ...prev, profileImage: false };
+      });
+    } else {
+      setEmptyCheck((prev) => {
+        return { ...prev, profileImage: true };
+      });
+    }
+
     if (props.data.summary.length === 0) {
       setEmptyCheck((prev) => {
         return { ...prev, summary: false };
